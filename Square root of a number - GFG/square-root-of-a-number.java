@@ -29,6 +29,7 @@ class Solution
      long floorSqrt(long x)
 	 {
 		// Your code here
+		
 		int i=1;
 		for(; i*i<=x; i++){
 		    if(i*i==x){
