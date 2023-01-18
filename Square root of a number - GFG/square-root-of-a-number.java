@@ -29,13 +29,23 @@ class Solution
      long floorSqrt(long x)
 	 {
 		// Your code here
-		
-		int i=1;
-		for(; i*i<=x; i++){
-		    if(i*i==x){
-		        return i;
-		    }
-		}
-		return i-1;
+	    
+	    long l =1,r=x;
+	    long ans =0;
+	    
+	    while(l<=r){
+	        long mid = l+(r-l)/2;
+	        long midSq = mid*mid;
+	        
+	        if(midSq==x)return mid;
+	        if(midSq>x){
+	            r = mid-1;
+	        }
+	        else{
+	            l = mid+1;
+	            ans = mid;
+	        }
+	    }
+	    return ans;
 	 }
 }
