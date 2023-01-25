@@ -42,7 +42,6 @@ class Main {
 
 class Solution
 {
-    static int i=1;
   public void printNos(int N)
     {
         //Your code here
@@ -51,7 +50,7 @@ class Solution
             printNos(N-1);
             System.out.print(N+" ");
         }
-      
+        
     }
 }
 
