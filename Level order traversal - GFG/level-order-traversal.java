@@ -140,15 +140,24 @@ class Solution
         if(node!=null)q.add(node);
         
         while(!q.isEmpty()){
-            ans.add(q.peek().data);
-            if(q.peek().left!=null){
-                q.offer((q.peek()).left);
-            }
-              if(q.peek().right!=null){
-                q.offer((q.peek()).right);
-            }
-            q.poll();
+            // ans.add(q.peek().data);
             
+            // if(q.peek().left!=null){
+            //     q.offer((q.peek()).left);
+            // }
+            //   if(q.peek().right!=null){
+            //     q.offer((q.peek()).right);
+            // }
+            // q.poll();
+            
+            Node cur = q.poll();
+            ans.add(cur.data);
+            if(cur.left!=null){
+                q.add(cur.left);
+            }
+            if(cur.right!=null){
+                q.add(cur.right);
+            }
         }
     }
 }
