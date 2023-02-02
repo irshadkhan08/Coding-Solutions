@@ -74,7 +74,7 @@ class Solve {
             
              if(arr[i]<=x && arr[i]>min ){
                 ceil = arr[i];
-                 min = arr[i];
+                 min = arr[i]; 
             }
            
            
