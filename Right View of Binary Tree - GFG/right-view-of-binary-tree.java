@@ -128,24 +128,70 @@ class Node
 }*/
 
 
+// class Solution{
+//     //Function to return list containing elements of right view of binary tree.
+//     ArrayList<Integer> rightView(Node node) {
+//         //add code here.
+//         ArrayList<Integer>ans = new ArrayList<Integer>();
+//         Queue<Node>q = new ArrayDeque<>();
+        
+//         q.add(node);
+        
+//         while(q.size()>0){
+            
+//             int s = q.size();
+           
+//             for(int i =0; i<s-1; i++){
+//                  Node root = q.remove();
+                 
+//                 if(i==s-1){
+//                     ans.add(root.data);
+//                 }
+//                 if(root.left!=null){
+//                     q.add(root.left);
+//                 }
+//                 if(root.right!=null){
+//                     q.add(root.right);
+//                 }
+//             }
+//         }
+        
+//         return ans;
+//     }
+// }
+
+
 class Solution{
     //Function to return list containing elements of right view of binary tree.
+  
     ArrayList<Integer> rightView(Node node) {
         //add code here.
-        ArrayList<Integer>ans = new ArrayList<Integer>();
-        int level =0;
+        ArrayList<Integer> list=new ArrayList<>();
         
-        rightSide(node, ans,level);
-        return ans;
-    }
-    public static void rightSide(Node node,ArrayList<Integer>ans,int level){
-        if(node==null)return;
+        Queue<Node> pq=new ArrayDeque<>();
         
-        if(ans.size()==level){
-            ans.add(node.data);
+        pq.add(node);
+        
+        while(pq.size()>0)
+        {
+            int count=pq.size();
+            
+            for(int i=0;i<count;i++)
+            {
+                Node root=pq.remove();
+                if(i==count-1)
+                {
+                    list.add(root.data);
+                }
+                
+                if(root.left!=null)
+                   pq.add(root.left);
+                   
+                   if(root.right!=null)
+                    pq.add(root.right);
+            }
         }
-        rightSide(node.right,ans,level+1);
-        rightSide(node.left,ans,level+1);
+        
+        return list;
     }
 }
-
