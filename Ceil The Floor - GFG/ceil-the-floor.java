@@ -67,13 +67,12 @@ class Solve {
         for(int i =0; i<n; i++){
             
              if(arr[i]>=x && arr[i]<max){
-                floor = arr[i];
+                ceil = arr[i];
                 max = arr[i];
-               // System.out.println(floor);
             }
             
              if(arr[i]<=x && arr[i]>min ){
-                ceil = arr[i];
+                floor = arr[i];
                  min = arr[i]; 
             }
            
@@ -81,7 +80,7 @@ class Solve {
         }
         
         
-        Pair p = new Pair(ceil,floor);
+        Pair p = new Pair(floor,ceil);
         return p;
     }
 }
