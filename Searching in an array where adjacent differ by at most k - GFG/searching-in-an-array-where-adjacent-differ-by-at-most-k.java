@@ -61,7 +61,8 @@ class Complete{
                return i;
             
            }
-           i = i+Math.max(1,Math.abs(arr[i]-x)/k);
+        //   i = i+Math.max(1,Math.abs(arr[i]-x)/k);
+         i = i+Math.max(1,Math.abs(x-arr[i])/k);
        }
        return -1;
     }
