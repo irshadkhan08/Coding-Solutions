@@ -27,8 +27,7 @@ class Solution
            int k = n-1;
            
            while(j<k){
-               //int s = a[i]+a[j]+a[k];
-               if((a[i]+a[j]+a[k])<sum){
+               if((a[i]+a[j])<sum-a[k]){
                 ans = ans+(k-j);
                 j++;
                }else{
