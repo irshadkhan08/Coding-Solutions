@@ -34,13 +34,33 @@ public class Main {
 
 class Solution {
     int findMaximum(int[] arr, int n) {
-        int max = Integer.MIN_VALUE;
-        // code here
-        for(int i =0; i<n; i++){
-            if(max<arr[i]){
-                max = arr[i];
+        
+        
+        
+        
+        int l  = 0;
+        int r = arr.length-1;
+      
+        while(l<r){
+            int mid = (l+r)/2;
+            
+            if(arr[mid]<arr[mid+1]){
+                l = mid+1;
+            }
+            else{
+                r = mid;
             }
         }
-        return max;
+        return arr[l];
+        //TC : O(n)
+        //SC : O(1)
+        // int max = Integer.MIN_VALUE;
+        // // code here
+        // for(int i =0; i<n; i++){
+        //     if(max<arr[i]){
+        //         max = arr[i];
+        //     }
+        // }
+        // return max;
     }
 }
