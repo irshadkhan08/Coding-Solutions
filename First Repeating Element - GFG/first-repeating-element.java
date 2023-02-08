@@ -43,21 +43,19 @@ class Solution {
     Map<Integer,Integer>map = new HashMap<>();
     int min = n;
     
-        for(int i=0; i<n; i++){
-            int e = arr[i];
-        
-            if(map.containsKey(e)){
-                min = Math.min(min,map.get(e));
-           
-            }
-            else{
-                map.put(e,i+1);
-            }
+    
+    for(int e :arr){
+        if(map.containsKey(e)){
+        map.put(e,map.get(e)+1);
+        }else{
+            map.put(e,1);
         }
-
-        if(min==n){
-            return -1;
+    }
+    for(int i =0; i<arr.length; i++){
+        if(map.get(arr[i])>1){
+            return i+1;
         }
-   return min;
+    }
+    return -1;
     }
 }
