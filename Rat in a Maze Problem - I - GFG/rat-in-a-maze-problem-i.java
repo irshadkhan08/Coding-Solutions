@@ -31,35 +31,32 @@ class Rat {
 
 class Solution {
     public static ArrayList<String> findPath(int[][] m, int n) {
-        ArrayList<String> paths = new ArrayList<String>();
-        if(m[0][0]==0)
-            return paths;
-        if(m[n-1][n-1]==0)
-            return paths;
+        ArrayList<String> ans = new ArrayList<String>();
+    
         String str = "";
+        if(m[0][0]==0)
+           return ans;
+        if(m[n-1][n-1]==0)
+        return ans;
         int row = 0;
         int col = 0;
-        recur(m, n, paths, str, row, col);
-        return paths;
+        helper(m,n,row,col,str,ans);
+        return ans;
     }
-    public static void recur(int[][] m, int n, ArrayList<String> paths, String str, int row, int col)
-    {
-        if(row == n - 1 && col == n - 1)
-        {
-            paths.add(str);
+    public static void helper(int [][]m,int n,int i,int j,String str, ArrayList<String> ans){
+        
+          if(i==n-1 && j==n-1){
+             ans.add(str);
+             return;
+           }
+        if(i<0||i==n||j<0 ||j==n|| m[i][j]==0){
             return;
         }
-        
-        if(row < 0 || row == n || col < 0 || col == n || m[row][col] == 0)
-        {
-            return;
-        }
-        
-        m[row][col] = 0;
-        recur(m, n, paths, str + 'D', row + 1, col);
-        recur(m, n, paths, str + 'R', row, col + 1);
-        recur(m, n, paths, str + 'U', row - 1, col);
-        recur(m, n, paths, str + 'L', row, col - 1);
-        m[row][col] = 1;
+        m[i][j] = 0;
+        helper(m,n,i+1,j,str+'D',ans);
+        helper(m,n,i,j+1,str+'R',ans);
+        helper(m,n,i-1,j,str+'U',ans);
+        helper(m,n,i,j-1,str+'L',ans);
+        m[i][j]=1;
     }
 }
