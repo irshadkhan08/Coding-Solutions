@@ -10,18 +10,31 @@ import java.io.*;
 
 class Solution
 {
+   
     //Function to sort the array using bubble sort algorithm.
-	public static void bubbleSort(int a[], int n)
+public static void bubbleSort(int arr[], int n)
+
     {
-        //code here
-        for(int i = 0; i<n; i++){
-            for(int j =i+1; j<n; j++){
-                if(a[i]>a[j]){
-                    int temp;
-                    temp = a[i];
-                    a[i] = a[j];
-                    a[j] = temp;
+
+        
+
+        // how many times the loop will run that is n-1 times
+
+        for(int i=0; i< n-1 ; i++)
+        {
+            boolean isSwap = false;
+            // for comaparing the element that is every iteration largest one will be on the last so we will run only upto unsorted array.
+
+            for(int j = 0; j<n-i-1; j++)
+            {
+                isSwap = true;
+                if (arr[j] > arr[j+1])
+                {
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
                 }
+                if(!isSwap)break;
             }
         }
     }
