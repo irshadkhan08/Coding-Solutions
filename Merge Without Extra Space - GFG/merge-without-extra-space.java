@@ -50,33 +50,24 @@ class Solution
     public static void merge(long arr1[], long arr2[], int n, int m) 
     {
         // code here 
-        int i =0,j = 0;
-        
-        while(i<n){
-            
-            // if(arr1[i]<arr2[j]){
-            //     i++;
-            //  }
-             if(arr1[i]>arr2[j]){
-                
-            long temp = arr1[i];
-            arr1[i] = arr2[j];
-            arr2[j] = temp;
-            //i++;
-            
-           
-            long p = arr2[j];
-            int q = j+1;
-            
-            while(q<m && p>arr2[q]){
-                arr2[q-1] = arr2[q];
-                q++;
-            }
-            arr2[q-1] = p;
-            }
-            i++;
-        }
-       
-        
+      
+      int k = 0,i=0,j=0;
+      //for(int i = 0; i<n; i++){
+      while(i<n && j<m){
+          if(arr1[i]>arr2[0]){
+              long temp = arr1[i];
+              arr1[i] = arr2[0];
+              arr2[0] = temp;
+          }
+          
+          long first = arr2[0];
+          
+          for(k = 1; k<m && arr2[k]<first; k++){
+              arr2[k-1] = arr2[k];
+          }
+          arr2[k-1] = first;
+           i++;
+      }
+     
     }
 }
