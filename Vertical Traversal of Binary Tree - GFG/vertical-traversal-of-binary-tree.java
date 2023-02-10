@@ -133,10 +133,10 @@ class Solution
             map.get(key).add(cur.root.data);
             if(cur.root.left!=null){
                 // q.add(hd,key.root.data);
-                 q.add(new Pair(key-1,cur.root.left));
+                 q.add(new Pair(cur.hd-1,cur.root.left));
             }
              if(cur.root.right!=null){
-                q.add(new Pair(key+1,cur.root.right));
+                q.add(new Pair(cur.hd+1,cur.root.right));
             }
         }
         for(ArrayList<Integer>e : map.values()){
