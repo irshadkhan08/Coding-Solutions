@@ -115,42 +115,43 @@ class Solution
     //Function to find the vertical order traversal of Binary Tree.
     static ArrayList <Integer> verticalOrder(Node root)
     {
-        // add your code here
         ArrayList<Integer>ans = new ArrayList<Integer>();
         if(root==null)return ans;
         Queue<Pair>q = new LinkedList<Pair>();
         q.add(new Pair(0,root));
-        Map<Integer,ArrayList<Integer>>map = new TreeMap<>();
         
+        Map<Integer,ArrayList<Integer>>map = new TreeMap<>();
         while(!q.isEmpty()){
-           Pair cur = q.poll();
             
+            Pair cur = q.poll();
             int key = cur.hd;
             
             if(!map.containsKey(key)){
-               map.put(key,new ArrayList<Integer>());
+                map.put(key,new ArrayList<Integer>());
             }
             map.get(key).add(cur.root.data);
+            
             if(cur.root.left!=null){
-                // q.add(hd,key.root.data);
-                 q.add(new Pair(cur.hd-1,cur.root.left));
+                q.add(new Pair(key-1,cur.root.left));
             }
              if(cur.root.right!=null){
-                q.add(new Pair(cur.hd+1,cur.root.right));
+                q.add(new Pair(key+1,cur.root.right));
             }
         }
         for(ArrayList<Integer>e : map.values()){
             ans.addAll(e);
-        }
-        return ans;
     }
+    return ans;
+    }
+    
     static class Pair{
         int hd;
         Node root;
         
-        Pair(int hd, Node root){
+        Pair(int hd,Node root){
             this.hd = hd;
             this.root = root;
         }
     }
+      
 }
