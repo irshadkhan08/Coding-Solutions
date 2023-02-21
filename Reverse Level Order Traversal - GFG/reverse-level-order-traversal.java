@@ -153,7 +153,6 @@ class Tree
             }
         
         }
-      //  list.add(0,list);
       //  Collections.reverse(list);
         return list;
     }
