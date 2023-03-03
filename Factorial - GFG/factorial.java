@@ -20,11 +20,9 @@ class GFG
 
 
 class Solution{
-    static long factorial(int N){
+    static long factorial(int n){
         // code here
-        if(N<=1){
-            return 1;
-        }
-        return (long)N*factorial(N-1);
+        if(n<=1)return 1;
+       return n*factorial(n-1);
     }
 }
