@@ -135,19 +135,11 @@ class Solution
 		Node left = lca(root.left,n1,n2);
 		Node right = lca(root.right,n1,n2);
 		
-		if(left!=null && right==null){
-		    return left;
-		}
-		else if(left==null && right!=null){
+		if(left==null){
 		    return right;
 		}
-		else if(left!=null && right!=null){
-		    return root;
-		}
-		else{
-		return null;
-		    
-		}
+		else if(right==null)return left;
+		return root;
 	}
 }
 
