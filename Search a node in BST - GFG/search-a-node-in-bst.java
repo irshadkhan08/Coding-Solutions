@@ -57,19 +57,24 @@ class Is_Node__Present_In_BST {
 // } Driver Code Ends
 
 
+
+
 class BST {
     // Function to search a node in BST.
     boolean search(Node root, int x) {
         // Your code here
-     if(root==null){
-         return false;
-     }
-     if(root.data==x){
-         return true;
-     }
-     else if(root.data<x){
-         return search(root.right,x);
-     }
-     return search(root.left,x);
+        
+        while(root!=null){
+           if(root.data==x){
+               return true;
+           }
+           else if(root.data<x){
+               root = root.right;
+           }
+           else{
+               root = root.left;
+           }
+        }
+        return false;
     }
 }
