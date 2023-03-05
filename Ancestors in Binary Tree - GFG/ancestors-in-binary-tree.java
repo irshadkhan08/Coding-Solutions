@@ -121,29 +121,25 @@ class Solution
 {
     
     public static boolean check(Node root,int target,ArrayList<Integer>ans){
-        if(root==null)return false;
-        
-        if(root.data==target){
+ 
+        if(root!=null){
+            if(root.data==target){
+                return true;
+            }
+            if(check(root.left,target,ans)||check(root.right,target,ans)){
+                ans.add(root.data);
+                return true;
+            }
             
-            return true;
-            
-        }
-        
-         if(check(root.left,target,ans)){
-            ans.add(root.data);
-            return true;
-        }
-         if(check(root.right,target,ans)){
-            ans.add(root.data);
-            return true;
         }
         return false;
+       
+     
     }
     public static ArrayList<Integer> Ancestors(Node root, int target)
-    {
-        ArrayList<Integer>ans = new ArrayList<Integer>();
-        check(root,target,ans);
-        return ans;
-    }
-
+   {
+       ArrayList<Integer>ans = new ArrayList<Integer>();
+       check(root,target,ans);
+       return ans;
+   }
 }
