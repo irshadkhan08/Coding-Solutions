@@ -32,10 +32,9 @@ class Main {
 class Solution {
     int sum(int arr[], int n) {
         // code here
-        int sum =0;
-        for(int i=0; i<n; i++){
-            sum = sum+arr[i];
+        if(n<1){
+            return 0;
         }
-        return sum;
+        return arr[n-1]+sum(arr,n-1);
     }
 }
