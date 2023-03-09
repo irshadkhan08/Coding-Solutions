@@ -10,22 +10,18 @@ import java.io.*;
 
 class Solution
 {
-    //Function to sort the array using bubble sort algorithm.
 	public static void bubbleSort(int a[], int n)
     {
-        //code here
-        for(int i = 0; i<n-1; i++){
-            for(int j = 0; j<n-i-1; j++){
-                if(a[j]>a[j+1]){
-                    swap(j,j+1,a);
-                }
-            }
-        }
-    }
-    public static void swap(int i,int j, int a[]){
-        int temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
+     //a = {4,1,3,9,7}
+     for(int i = 0; i<a.length-1;i++){
+         for(int j = 0; j<a.length-i-1; j++){
+             if(a[j]>a[j+1]){
+                 int temp = a[j];
+                 a[j] = a[j+1];
+                 a[j+1]= temp;
+             }
+         }
+     }
     }
 }
 
