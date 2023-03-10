@@ -42,15 +42,13 @@ class Main {
 
 class Solution
 {
-  public void printNos(int N)
+    
+  public void printNos(int n)
     {
         //Your code here
-        
-        if(N>0){
-            printNos(N-1);
-            System.out.print(N+" ");
-        }
+        if(n==0)return;
+        printNos(n-1);
+        System.out.print(n+" ");
         
     }
 }
-
