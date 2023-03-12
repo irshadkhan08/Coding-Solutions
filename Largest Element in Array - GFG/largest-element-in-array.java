@@ -37,7 +37,7 @@ class GFG {
 class Compute {
     public int largest(int arr[], int n)
     {
-        if(n==0)return arr[0];
+        if(n==1)return arr[0];
         return Math.max(largest(arr,n-1),arr[n-1]);
     }
 }
