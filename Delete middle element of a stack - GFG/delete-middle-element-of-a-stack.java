@@ -57,8 +57,8 @@ class Solution
             st.pop();
             return;
         }
-       //int top = st.peek();
-         int top =st.pop();
+        int top = st.peek();
+        st.pop();
         delete(st,count+1,pos);
         st.push(top);
     }
