@@ -114,11 +114,11 @@ class Node {
 class Solution
 {
     // Return a list containing the inorder traversal of the given tree
-    public static Node lmax(Node root){
+    public static Node lmax(Node root,Node cur){
         if(root==null){
             return root;
         }
-        while(root.right!=null && root.right!=root){
+        while(root.right!=null && root.right!=cur){
             root = root.right;
         }
         return root;
@@ -137,13 +137,14 @@ class Solution
                cur = cur.right;
            }
            else{
-               Node pre = cur.left;
-                if(pre==null){
-                   return ans;
-               }
-               while(pre.right!=null && pre.right!=cur){
-                   pre = pre.right;
-               }
+               Node pre = lmax(cur.left,cur);
+               
+            //     if(pre==null){
+            //       return ans;
+            //   }
+            //   while(pre.right!=null && pre.right!=cur){
+            //       pre = pre.right;
+            //   }
                 //ans.add(pre.data);
          
                if(pre.right==null){
