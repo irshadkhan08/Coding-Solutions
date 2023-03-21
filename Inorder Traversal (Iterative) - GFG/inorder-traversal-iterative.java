@@ -114,25 +114,49 @@ class Node {
 class Solution
 {
     // Return a list containing the inorder traversal of the given tree
+    public static Node lmax(Node root){
+        if(root==null){
+            return root;
+        }
+        while(root.right!=null && root.right!=root){
+            root = root.right;
+        }
+        return root;
+    }
     ArrayList<Integer> inOrder(Node root)
     {
-        // Code
-        
-        ArrayList<Integer>ans = new ArrayList<Integer>();
-        if(root==null)return ans;
-        Stack<Node>stack = new Stack<Node>();
-        Node cur = root;
-        
-        while(!stack.isEmpty()|| cur!=null){
-            while(cur!=null){
-                stack.push(cur);
-                cur = cur.left;
-            }
-            cur = stack.pop();
-            ans.add(cur.data);
-            cur = cur.right;
-        }
-        return ans;
+       
+       ArrayList<Integer>ans = new ArrayList<Integer>();
+       
+       Node cur = root;
+       
+       while(cur!=null){
+           
+           if(cur.left==null){
+               ans.add(cur.data);
+               cur = cur.right;
+           }
+           else{
+               Node pre = cur.left;
+                if(pre==null){
+                   return ans;
+               }
+               while(pre.right!=null && pre.right!=cur){
+                   pre = pre.right;
+               }
+                //ans.add(pre.data);
+         
+               if(pre.right==null){
+                   pre.right=cur;
+                   cur = cur.left;
+               }
+               else{
+                   pre.right = null;
+                   ans.add(cur.data);
+                   cur = cur.right;
+               }
+           }
+       }
+       return ans;
     }
-    
 }
