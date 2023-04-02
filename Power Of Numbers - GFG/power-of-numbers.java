@@ -67,13 +67,14 @@ class Solution
         
        
        long mod = 1000000007;
+       long ans = 1;
+        ans = power(N,R/2);
+       ans = (ans*ans)%mod;
         if(R%2==0){
-            long ans = power(N,R/2);
-            return (ans%mod * ans%mod)%mod;
+            return ans%mod;
         }
         else{
-            long ans = power(N,(R-1)/2);
-            return (N%mod *ans%mod *ans%mod)%1000000007;
+           return (N*ans)%mod;
         }
       
     }
