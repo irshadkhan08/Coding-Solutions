@@ -23,13 +23,12 @@ class GFG {
 // User function Template for Java
 
 class Solution {
-    long sumOfSeries(long N) {
+    long sumOfSeries(long n) {
         // code here
         long sum  = 0;
-        
-        for(int i = 1; i<=(int)N; i++){
-            sum+=i;
-        }
-        return sum*sum;
+        long p = n*n;
+        long q = (n+1);
+        return (p*((q*q)))/4;
+       
     }
 }
