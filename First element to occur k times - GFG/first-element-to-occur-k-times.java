@@ -29,25 +29,24 @@ class Solution
     public int firstElementKTime(int[] a, int n, int k) { 
         HashMap<Integer,Integer>map = new HashMap<Integer,Integer>();
 
-       for(int e : a){
+    //   for(int e : a){
+    //           map.put(e,map.getOrDefault(e,0)+1);
+               
+    //           if(map.get(e)==k){
+    //               return e;
+    //           }
            
-           if(map.containsKey(e)){
-              int f = map.get(e);
-              map.put(e,f+1);
-              
-               if(map.get(e)==k){
-               return e;
-           }
+    //   }
+    
+    int count[] = new int[10000];
+    
+    for(int i = 0; i<n; i++){
+        count[a[i]]++;
         
-           }
-           else{
-           map.put(e,1);
-           
-            if(map.get(e)==k){
-               return e;
-           }
-           }
-       }
+        if((count[a[i]])==k){
+            return a[i];
+        }
+    }
        return -1;
     } 
 }
