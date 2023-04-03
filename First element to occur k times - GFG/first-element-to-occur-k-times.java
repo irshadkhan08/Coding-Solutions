@@ -28,19 +28,21 @@ class Solution
 {
     public int firstElementKTime(int[] a, int n, int k) { 
         HashMap<Integer,Integer>map = new HashMap<Integer,Integer>();
-       
-        for(int i =0; i<n; i++){
-            if(map.containsKey(a[i])){
-                map.put(a[i],map.get(a[i])+1);
-            }
-            else{
-               map.put(a[i],1);
-            }
-            
-            if(k==map.get(a[i])){
-               return a[i];
-            }
-        }
-        return -1;
+        int f = 0;
+       for(int e : a){
+           
+           if(map.containsKey(e)){
+              f = map.get(e);
+              map.put(e,f+1);
+           }
+           else{
+           map.put(e,1);
+           }
+           
+           if(map.get(e)==k){
+               return e;
+           }
+       }
+       return -1;
     } 
 }
