@@ -42,9 +42,6 @@ class Solution {
 
         // Your code here
         int ans = -1;
-        // if(n==0){
-        //     return -1;
-        // }
         if(n==1){
             return 1;
         }
@@ -55,14 +52,13 @@ class Solution {
         }
         long sum = 0;
         
-        for(int i =0; i<n; i++){
+        for(int i = 0;  i<n; i++){
             sum = sum+arr[i];
-            if((totalSum+arr[i])==(sum+sum)){
-                //if((totalSum-sum)==(sum-arr[i])){
-             ans = i;
-             break;
-            }
             
+            if((totalSum-sum)==sum-arr[i]){
+                ans = i;
+            }
+            // totalSum = totalSum-arr[i];
         }
         if(ans==-1){
             return ans;
