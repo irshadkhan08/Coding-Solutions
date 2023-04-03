@@ -55,7 +55,7 @@ class Solution {
         for(int i = 0;  i<n; i++){
             sum = sum+arr[i];
             
-            if((totalSum+arr[i])==sum+sum){
+            if((totalSum+arr[i])==(2*sum)){
                 ans = i;
             }
             // totalSum = totalSum-arr[i];
