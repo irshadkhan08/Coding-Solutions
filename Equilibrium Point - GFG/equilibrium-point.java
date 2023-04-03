@@ -55,9 +55,9 @@ class Solution {
         }
         long sum = 0;
         
-        for(int i =1; i<n; i++){
-            sum = sum+arr[i-1];
-            if((totalSum-sum-arr[i])==sum){
+        for(int i =0; i<n; i++){
+            sum = sum+arr[i];
+            if((totalSum-sum)==(sum-arr[i])){
              ans = i;
              break;
             }
