@@ -45,18 +45,37 @@ class Compute {
     public void rotate(int arr[], int n)
     {
      
-     int temp[] = new int[n];
-     n = n-1;
-     int j = 0;
-     for(int i = n; i<=n; i++){
-        temp[j++] = arr[i];
-     }
-     for(int i = 0; i<n; i++){
-         temp[j++] = arr[i];
-     }
+     //  first method copy array
+    //  int temp[] = new int[n];
+    //  n = n-1;
+    //  int j = 0;
+    //  for(int i = n; i<=n; i++){
+    //     temp[j++] = arr[i];
+    //  }
+    //  for(int i = 0; i<n; i++){
+    //      temp[j++] = arr[i];
+    //  }
      
-     for(int i = 0; i<=n; i++){
-         arr[i] = temp[i];
-     }
+    //  for(int i = 0; i<=n; i++){
+    //      arr[i] = temp[i];
+    //  }
+    
+    
+    //second method using reverse method
+     
+      n = n-1;
+      reverse(n,n,arr);
+      reverse(0,n-1,arr);
+      reverse(0,n,arr);
+    }
+    public static void reverse(int l,int h,int arr[]){
+        
+        while(l<h){
+        int temp = arr[l];
+        arr[l] = arr[h];
+        arr[h] = temp;
+        l++;
+        h--;
+        }
     }
 }
