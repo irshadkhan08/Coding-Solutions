@@ -17,28 +17,56 @@ class GFG
     {
         // code here
        
-        long n1 = -1;
-        long n2 = -1;
+        long left = -1;
+        long right = -1;
         ArrayList<Long>list = new ArrayList<Long>();
         
  
-        for(int i = 0; i<n; i++){
-            if(arr[i]==x){
-                n1 = (long)i;
-                break;
+        int l = 0;
+        int r = arr.length-1;
+        
+        while(l<=r){
+            
+        int mid = (l+r)/2;
+        
+        if(arr[mid]==x){
+           
+            left = (long)mid;
+            r = mid-1;
+        }
+        else if(arr[mid]<x){
+            l = mid+1;
+        }
+        else if(arr[mid]>x){
+            r = mid-1;
+        }
+        
+        }
+        
+        
+        //right part 
+        
+        l = 0;
+        r = arr.length-1;
+        while(l<=r){
+            
+            int mid = (l+r)/2;
+            
+            if(arr[mid]==x){
+                right = (long)mid;
+                l= mid+1;
+                
+            }
+            else if(arr[mid]<x){
+                l = mid+1;
+            }
+            else if(arr[mid]>x){
+                r = mid-1;
             }
         }
         
-           for(int i = 0; i<n; i++){
-            if(arr[i]==x){
-                n2 = (long)i;
-        
-            }
-        }
-        
-         
-         list.add(n1);
-         list.add(n2);
+         list.add(left);
+         list.add(right);
         return list;
     }
 }
