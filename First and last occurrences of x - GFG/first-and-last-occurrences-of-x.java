@@ -29,13 +29,13 @@ class GFG
             }
         }
         
-        for(int j = n-1; j>=0; --j){
-            if(arr[j]==x){
-                n2 = (long)j;
-                break;
-                
+           for(int i = 0; i<n; i++){
+            if(arr[i]==x){
+                n2 = (long)i;
+        
             }
-         }
+        }
+        
          
          list.add(n1);
          list.add(n2);
