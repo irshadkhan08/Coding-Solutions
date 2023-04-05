@@ -39,7 +39,6 @@ class Solution{
 		     sum+=A[i];
 		    if(totalSum==sum){
 		        ans = i;
-		        break;
 		    }
 		    totalSum = totalSum-A[i];
 		}
