@@ -117,10 +117,9 @@ class Tree
     if(root==null){
         return 0;
     }
-    int l = getSize(root.left)+1;
+    int l = getSize(root.left);
     int r = getSize(root.right);
-    
-     return l+r;
-    
+
+     return l+r+1;
     }
 }
