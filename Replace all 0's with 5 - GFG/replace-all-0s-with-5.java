@@ -27,28 +27,47 @@ class GfG {
     
     //second method
     
-    int rev = 0;
-    int d = 0;
+    // int rev = 0;
+    // int d = 0;
     
+    // while(0<num){
+    //     d = num%10;
+        
+    //     if(d==0){
+    //         d = 5;
+    //     }
+    //     rev = rev*10+d;
+    //     num = num/10;
+    // }
+    // // first while revrese number = 4551
+    // int ans = 0;
+    // int rem = 0;
+    
+    // while(0<rev){
+    //     rem = rev%10;
+        
+    //     ans = ans*10+rem;
+    //     rev = rev/10;
+    // }
+    // return ans;
+    
+    
+    
+    
+    //third method
+    
+    double ans = 0;
+    int d = 0;
+    double i = 0;
     while(0<num){
         d = num%10;
-        
         if(d==0){
             d = 5;
         }
-        rev = rev*10+d;
+        ans = (d*Math.pow(10,i))+ans;
+        i++;
         num = num/10;
     }
-    
-    int ans = 0;
-    int rem = 0;
-    
-    while(0<rev){
-        rem = rev%10;
-        
-        ans = ans*10+rem;
-        rev = rev/10;
-    }
-    return ans;
+    return (int)ans;
     }
 }
