@@ -81,7 +81,6 @@ class GfG
     int i = 1;
     int ans = 0;
     while(node!=null){
-        
         if(i==ind){
             ans = node.data;
             break;
@@ -90,26 +89,5 @@ class GfG
         i++;
     }
     return ans;
-
-
-
-
-   
-   
-    //   if (ind == 0) {
-    //         return node.data;
-    //     }
-        // Node temp = node.next;
-        // int i = 1;
-        // int count = 0;
-     
-        // while (i<=ind || u!=null) {
-        //     if(i==ind){
-        //         temp = temp.next;
-        //     }
-        //     temp = temp.next;
-        //     ++i;
-        // }
-        // return temp.data;
     }
 }
