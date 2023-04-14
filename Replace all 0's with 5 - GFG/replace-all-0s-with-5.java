@@ -64,8 +64,8 @@ class GfG {
         if(d==0){
             d = 5;
         }
-        ans = (d*Math.pow(10,i))+ans;
-        i++;
+        ans = (d*Math.pow(10,i++))+ans;
+
         num = num/10;
     }
     return (int)ans;
