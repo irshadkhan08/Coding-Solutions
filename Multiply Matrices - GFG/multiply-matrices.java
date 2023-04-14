@@ -48,11 +48,5 @@ class GfG
                }
            }
            
-           
-           for(int i = 0; i<C.length; i++){
-               for(int j = 0; j<C.length; j++){
-                   A[i][j] = C[i][j];
-               }
-           }
         }
 }
