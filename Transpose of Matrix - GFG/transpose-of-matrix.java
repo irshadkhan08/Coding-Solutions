@@ -45,7 +45,6 @@ class Solution
         // code here
         
         for(int i = 0; i<matrix.length; i++){
-           
             for(int j = 0; j<=i; j++){
                 swap(i,j,matrix);
                // matrix[i][j] = matrix[j][i];
@@ -53,8 +52,12 @@ class Solution
         }
     }
     public static void swap(int i,int j,int matrix[][]){
-        int temp = matrix[j][i];
-        matrix[j][i] = matrix[i][j];
-        matrix[i][j] = temp;
+        // int temp = matrix[j][i];
+        // matrix[j][i] = matrix[i][j];
+        // matrix[i][j] = temp;
+        
+        int temp = matrix[i][j];
+        matrix[i][j] = matrix[j][i];
+        matrix[j][i] = temp;
     }
 }
