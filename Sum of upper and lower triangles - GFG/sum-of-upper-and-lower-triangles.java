@@ -47,12 +47,13 @@ class Solution
                 rightsum = rightsum+matrix[i][j];
             }
         }
-        ans.add(rightsum);
+        
         for(int i = 0; i<n; i++){
             for(int j = 0; j<=i; j++){
                 leftsum = leftsum+matrix[i][j];
             }
         }
+        ans.add(rightsum);
         ans.add(leftsum);
         return ans;
     }
