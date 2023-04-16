@@ -40,25 +40,61 @@ class Solution
 {
     public void  rotate(int[][] matrix)
     {
-        // code here
+        //first method optimal solution
+        
+        //------> step1 :column interchange and row fix
+        
         int n = matrix.length;
-          int l = 0;
-        int temp[][] = new int[n][n];
-        
-        for(int i = n-1; i>=0; --i){
-          
-            int k = 0;
-            for(int j = n-1; j>=0; --j){
-                temp[l][k++] = matrix[i][j];
+        for(int i =0; i<n;i++){
+            
+            int l = 0;
+            int r = n-1;
+            
+            while(l<=r){
+                int temp = matrix[i][l];
+                matrix[i][l] = matrix[i][r];
+                matrix[i][r] = temp;
+                l++;
+                r--;
             }
-            l++;
         }
         
+        //------> step2 : row interchange and column fix
         
-        for(int i = 0; i<n; i++){
+        int low = 0;
+        int high = n-1;
+        
+        while(low<=high){
+            
             for(int j = 0; j<n; j++){
-                matrix[i][j] = temp[i][j];
+                int temp = matrix[low][j];
+                matrix[low][j] = matrix[high][j];
+                matrix[high][j] = temp;
             }
+            low++;
+            high--;
         }
+        
+    
+        // code here
+        // int n = matrix.length;
+        //   int l = 0;
+        // int temp[][] = new int[n][n];
+        
+        // for(int i = n-1; i>=0; --i){
+          
+        //     int k = 0;
+        //     for(int j = n-1; j>=0; --j){
+        //         temp[l][k++] = matrix[i][j];
+        //     }
+        //     l++;
+        // }
+        
+        
+        // for(int i = 0; i<n; i++){
+        //     for(int j = 0; j<n; j++){
+        //         matrix[i][j] = temp[i][j];
+        //     }
+        // }
     }
 }
