@@ -44,22 +44,44 @@ public class Main {
 class Solution {
     void rotateMatrix(int matrix[][], int n) {
         // code here
-         int l = 0;
-       int temp[][] = new int[n][n];
-        for(int i = n-1; i>=0; i--){
-             int k = 0;
-            for(int j = 0; j<n; j++){
-                //matrix[k][j] = matrix[j][i];
-                  temp[l][k++]= matrix[j][i];
+        
+        
+         for(int i = 0; i<n;i++){
+            for(int j = 0; j<i; j++){
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
             }
-            l++;
-            k = 0;
         }
         
-     for(int i = 0; i<n; i++){
-         for(int j= 0; j<n; j++){
-             matrix[i][j] = temp[i][j];
-         }
-    }
+        int l = 0;
+        int r = n-1;
+        
+        while(l<=r){
+            for(int j= 0; j<n; j++){
+                int temp = matrix[l][j];
+                matrix[l][j] = matrix[r][j];
+                matrix[r][j] = temp;
+            }
+            l++;
+            r--;
+        }
+    //      int l = 0;
+    //   int temp[][] = new int[n][n];
+    //     for(int i = n-1; i>=0; i--){
+    //          int k = 0;
+    //         for(int j = 0; j<n; j++){
+    //             //matrix[k][j] = matrix[j][i];
+    //               temp[l][k++]= matrix[j][i];
+    //         }
+    //         l++;
+    //         k = 0;
+    //     }
+        
+    //  for(int i = 0; i<n; i++){
+    //      for(int j= 0; j<n; j++){
+    //          matrix[i][j] = temp[i][j];
+    //      }
+    // }
 }
 }
