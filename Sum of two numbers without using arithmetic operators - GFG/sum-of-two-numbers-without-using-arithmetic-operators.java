@@ -33,11 +33,11 @@ class Solution
     int sum(int a , int b)
     {
         //code here
-        // return a+b;
-        while(b!=0){
-            a++;
-            b--;
-        }
-        return a;
+        return a+b;
+        // while(b!=0){
+        //     a++;
+        //     b--;
+        // }
+        // return a;
     }
 }
