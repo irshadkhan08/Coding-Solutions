@@ -47,11 +47,17 @@ class Solution {
         Arrays.sort(a);
         Arrays.sort(b);
         long mul = 0;
-        
+        int l = 0;
+        int r = b.length-1;
+        while(l<=r){
+            long temp = b[l];
+            b[l] = b[r];
+            b[r] = temp;
+            l++;
+            r--;
+        }
         for(int i = 0; i<a.length;i++){
-            for(int j= b.length-1-i; j>=b.length-1-i; j--){
-                mul+=a[i]*b[j];
-            }
+           mul+=a[i]*b[i];
         }
         return mul;
     }
