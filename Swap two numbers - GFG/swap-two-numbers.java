@@ -28,10 +28,19 @@ class Solution{
     {
         // code here
         List<Integer>ans = new ArrayList<Integer>();
-        int temp = a;
-        a = b;
+        // int temp = a;
+        // a = b;
+        // ans.add(a);
+        // b = temp;
+        // ans.add(b);
+        // return ans;
+        
+        //second method
+        
+        a = a^b;
+        b = a^b;
+        a = a^b;
         ans.add(a);
-        b = temp;
         ans.add(b);
         return ans;
     }
