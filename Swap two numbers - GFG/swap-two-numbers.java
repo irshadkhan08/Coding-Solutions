@@ -40,7 +40,7 @@ class Solution{
         a = a^b;
         b = a^b;
         a = a^b;
-        ans.add(a);
+         ans.add(a);
         ans.add(b);
         return ans;
     }
