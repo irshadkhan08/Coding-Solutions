@@ -77,15 +77,30 @@ class Solution {
         // return count;
         
   
-        int count = 0;
+        // int count = 0;
+        
+        // HashMap<Integer,Integer>map = new HashMap<>();
+        
+        // for(int i = 0; i<n; i++){
+        //     int p = k-arr[i];
+            
+        //     if(map.containsKey(p)){
+        //         count = count+map.get(p);
+        //     }
+        //     if(map.get(arr[i])==null){
+        //         map.put(arr[i],0);
+        //     }
+        //     map.put(arr[i],map.get(arr[i])+1);
+        // }
+        // return count;
         
         HashMap<Integer,Integer>map = new HashMap<>();
-        
-        for(int i = 0; i<n; i++){
-            int p = k-arr[i];
+        int count = 0;
+        for(int i =0; i<n; i++){
+            int val = k-arr[i];
             
-            if(map.containsKey(p)){
-                count = count+map.get(p);
+            if(map.containsKey(val)){
+                count+=map.get(val);
             }
             if(map.get(arr[i])==null){
                 map.put(arr[i],0);
