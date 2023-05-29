@@ -34,11 +34,19 @@ class Solution
     public long sum_of_ap(long n, long a, long d)
     {
         // Code here
-        long sum = 0;
         
-        for(int i = 1; i<=n; i++){
-            sum = sum+(a+(i-1)*d);
-        }
-        return sum;
+        //This is first approach soln in O(n)
+        // long sum = 0;
+        // for(int i = 1; i<=n; i++){
+        //     sum = sum+(a+(i-1)*d);
+        // }
+        // return sum;
+        
+        
+        
+        //optimaztion approach
+        //in o(1)
+        
+        return (n*(2*a+(n-1)*d))/2;
     }
 }
