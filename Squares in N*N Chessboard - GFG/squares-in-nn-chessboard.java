@@ -29,6 +29,9 @@ class Solution {
     if(N==1){
         return N;
     }
-    return N*N+squaresInChessBoard(N-1);
+    // return N*N+squaresInChessBoard(N-1);
+    
+    long sum = N*(N+1)*(2*N+1);
+    return sum/6;
     }
 };
