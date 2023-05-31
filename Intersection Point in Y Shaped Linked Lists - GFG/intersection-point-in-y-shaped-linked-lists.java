@@ -130,116 +130,116 @@ class Intersect
 	{
          // code here
          
-               int ans = 0;
-         Node node1 = head1;
-         Node node2 = head2;
-         int len1 = 0;
-         int len2 = 0;
-         while(node1!=null){
-             node1 = node1.next;
-              len1++;
-         }
+        //       int ans = 0;
+        //  Node node1 = head1;
+        //  Node node2 = head2;
+        //  int len1 = 0;
+        //  int len2 = 0;
+        //  while(node1!=null){
+        //      node1 = node1.next;
+        //       len1++;
+        //  }
          
-         while(node2!=null){
-             node2 = node2.next;
-             len2++;
-         }
+        //  while(node2!=null){
+        //      node2 = node2.next;
+        //      len2++;
+        //  }
          
-         node1 = head1;
-         node2 = head2;
-         if(len1>len2){
-             int dif = len1-len2;
+        //  node1 = head1;
+        //  node2 = head2;
+        //  if(len1>len2){
+        //      int dif = len1-len2;
     
-             while(dif!=0){
-                 node1 = node1.next;
-                 dif--;
-             }
-             Node temp = node1;
+        //      while(dif!=0){
+        //          node1 = node1.next;
+        //          dif--;
+        //      }
+        //      Node temp = node1;
              
-             while(temp!=null || node2!=null){
+        //      while(temp!=null || node2!=null){
                  
-                 if(temp==node2){
-                     return temp.data;
-                 }
-                 temp = temp.next;
-                 node2 = node2.next;
-             }
-         }
-         else if(len1<len2){
-             int dif = len2-len1;
-             while(dif!=0){
-                 node2 = node2.next;
-                 dif--;
-             }
-             Node temp = node2;
+        //          if(temp==node2){
+        //              return temp.data;
+        //          }
+        //          temp = temp.next;
+        //          node2 = node2.next;
+        //      }
+        //  }
+        //  else if(len1<len2){
+        //      int dif = len2-len1;
+        //      while(dif!=0){
+        //          node2 = node2.next;
+        //          dif--;
+        //      }
+        //      Node temp = node2;
              
-             while(temp!=null || node1!=null){
+        //      while(temp!=null || node1!=null){
                  
-                 if(temp==node1){
-                     return temp.data;
-                 }
-                 temp = temp.next;
-                 node1 = node1.next;
-             }
-         }
-         else{
+        //          if(temp==node1){
+        //              return temp.data;
+        //          }
+        //          temp = temp.next;
+        //          node1 = node1.next;
+        //      }
+        //  }
+        //  else{
         
              
              
-             while(node2!=null || node1!=null){
+        //      while(node2!=null || node1!=null){
                  
-                 if(node1==node2){
-                    return node1.data;
-                 }
-                 node1 = node1.next;
-                 node2 = node2.next;
-             }
-         }
+        //          if(node1==node2){
+        //             return node1.data;
+        //          }
+        //          node1 = node1.next;
+        //          node2 = node2.next;
+        //      }
+        //  }
          
-         return -1;
+        //  return -1;
         // return ans;
    
-    //   Node node1 = head1;
-    //   Node node2 = head2;
+      Node node1 = head1;
+      Node node2 = head2;
       
-    //   int len1 = 0;
-    //   int len2 = 0;
+      int len1 = 0;
+      int len2 = 0;
       
-    //   while(node1!=null){
-    //          len1++;
-    //       node1 = node1.next;
+      while(node1!=null){
+             len1++;
+          node1 = node1.next;
        
-    //   }
+      }
       
-    //   while(node2!=null){
-    //       len2++;
-    //       node2 = node2.next;
-    //   }
+      while(node2!=null){
+          len2++;
+          node2 = node2.next;
+      }
       
-    //   node1 = head1;
-    //   node2 = head2;
-    //   int dif = Math.abs(len1-len2);
-      
-      
-    //   while(len1>len2){
-    //       node1 = node1.next;
-    //       len1--;
-    //   }
-    //   while(len1<len2){
-    //       node2 = node2.next;
-    //       len2--;
-    //   }
+      node1 = head1;
+      node2 = head2;
+      int dif = Math.abs(len1-len2);
       
       
-    //   while(node1!=null && node2!=null){
-    //       if(node1==node2){
-    //           return node1.data;
-    //       }
-    //       node1 = node1.next;
-    //       node2 = node2.next;
-    //   }
+      while(len1>len2){
+          node1 = node1.next;
+          len1--;
+      }
+      while(len1<len2){
+          node2 = node2.next;
+          len2--;
+      }
       
-    //   return -1;
+      
+      while(node1!=null && node2!=null){
+          if(node1==node2){
+              return node1.data;
+          }
+          node1 = node1.next;
+          node2 = node2.next;
+      }
+      
+      return -1;
    
 	}
 }
