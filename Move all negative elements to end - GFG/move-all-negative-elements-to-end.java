@@ -44,13 +44,9 @@ class Solution {
         // Your code goes here
         int ans[]  = new int[n];
         int k = 0;
-        int count = 0;
         for(int i = 0; i<n; i++){
-            if(arr[i]<0){
-                 count++;
-            }
-            else{
-            ans[k++] = arr[i];
+            if(arr[i]>0){
+                 ans[k++] = arr[i];
             }
         }
         
