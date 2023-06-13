@@ -55,7 +55,7 @@ class Solution {
         ans[k1++] = arr[n/2];
         }
         else{
-            while(i<j){
+            while(i<=j){
             ans[k1++] = arr[i++];
             ans[k1++] = arr[j--];
         }
