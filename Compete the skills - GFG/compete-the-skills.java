@@ -62,6 +62,9 @@ class Solution {
             else if(a[i]<b[i]){
                  GFG.cb++;
             }
+            else{
+                continue;
+            }
         }
     }
 }
