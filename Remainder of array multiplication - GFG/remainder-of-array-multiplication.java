@@ -38,6 +38,6 @@ class Solution {
         for(int i = 0; i<N; i++){
             mul = (mul*arr[i])%K;
         }
-        return mul;
+        return mul%K;
     }
 };
