@@ -27,21 +27,34 @@ class GFG{
 class Solution{
     static long nPr(long n, long r){
         // code here
-        long f1 = fun1(n);
-        long f2 = fun2(n-r);
-        long ans = f1/f2;
+        
+        long ans = 1;
+        int i =0;
+        while(i<r){
+            ans = ans*n;
+            n--;
+            i++;
+        }
         return ans;
+        
+        
+        
+        // this is first rule
+        // long f1 = fun1(n);
+        // long f2 = fun2(n-r);
+        // long ans = f1/f2;
+        // return ans;
     }
-    public static long fun1(long n){
-        if(n==0||n==1){
-            return 1;
-        }
-        return n*fun1(n-1);
-    }
-    public static long fun2(long n){
-        if(n==0||n==1){
-            return 1;
-        }
-        return n*fun1(n-1);
-    }
+    // public static long fun1(long n){
+    //     if(n==0||n==1){
+    //         return 1;
+    //     }
+    //     return n*fun1(n-1);
+    // }
+    // public static long fun2(long n){
+    //     if(n==0||n==1){
+    //         return 1;
+    //     }
+    //     return n*fun1(n-1);
+    // 
 }
