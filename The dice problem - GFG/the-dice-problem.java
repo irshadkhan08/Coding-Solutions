@@ -28,6 +28,31 @@ class GFG
 class Solution{
     static int oppositeFaceOfDice(int N){
         // code here
-        return 7-N;
+      //  return 7-N;
+      int ans = 0;
+      
+      switch(N){
+        case 1:
+            ans = 6;
+            break;
+        case 2:
+            ans = 5;
+            break;
+            
+        case 3:
+            ans = 4;
+            break;
+        case 4 :
+            ans = 3;
+            break;
+        case 5 :
+            ans = 2;
+            break;
+        case 6 :
+            ans =1;
+            break;
+      }
+      return ans;
+        
     }
 }
