@@ -36,28 +36,86 @@ class Solution {
         // code here
        
        boolean istrue;
-       for(int i = 0; i<n-2; i++){
-           for(int j = i+1; j<n-1; j++){
-               for(int k = j+1; k<n; k++){
-                   int a = arr[i]*arr[i];
-                   int b = arr[j]*arr[j];
-                   int c = arr[k]*arr[k];
+    //   for(int i = 0; i<n-2; i++){
+    //       for(int j = i+1; j<n-1; j++){
+    //           for(int k = j+1; k<n; k++){
+    //               int a = arr[i]*arr[i];
+    //               int b = arr[j]*arr[j];
+    //               int c = arr[k]*arr[k];
                    
-                   if(a+b==c|| a+c==b ||b+c==a){
-                      return true;
-                   }
-                   
-                   
-                   
-                //   if(((int)Math.pow(a,2)+(int)Math.pow(b,2))==(int)Math.pow(c,2)){
-                //       continue;
-                //   }
-                //   else{
-                //       return false;
-                //   }
-               }
-           }
-       }
-        return false;
+    //               if(a+b==c|| a+c==b ||b+c==a){
+    //                   return true;
+    //               }
+    //           }
+    //       }
+    //   }
+    
+    
+    // for(int i = 0; i<n; i++){
+    //     arr[i] = arr[i]*arr[i];
+    // }
+    
+    // int l = 0;
+    // int r = n-2;
+    // int h = n-1;
+    // // Arrays.sort(arr);
+    // while(l<=r){
+    //     if(arr[l]+arr[r]==arr[h]){
+    //         return true;
+    //     }
+    //     else if(arr[l]+arr[r]<arr[h]){
+    //         l++;
+    //     }
+    //     else{
+            
+    //         r--;
+    //     }
+    // }
+    //     return false;
+    
+    
+    
+    
+    Arrays.sort(arr);
+    for(int i = 0; i<n; i++){
+        arr[i] = arr[i]*arr[i];
+    }
+    
+    for(int i = n-1; i>=0; i--){
+        
+        int l = 0;
+        int r = n-2;
+        
+        while(l<r){
+            if(arr[l]+arr[r]==arr[i]){
+                return true;
+            }
+            else if(arr[l]+arr[r]<arr[i]){
+                l++;
+            }
+            else{
+                r--;
+            }
+        }
+        
+    }
+    
+    return false;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
 }
