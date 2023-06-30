@@ -27,21 +27,45 @@ class Solution {
     int isDivisible(String s) {
         // code here
         
-        int sum = 0;
-        int x = 1;
-        for(int i = s.length()-1; i>=0; i--){
-            if(s.charAt(i)=='1'){
-              sum = (sum+x)%3;
+    //  int x = 1;
+    //  int sum = 0;
+    //  for(int i = s.length()-1; i>=0; i--){
+    //      if(s.charAt(i)=='1'){
+    //          sum = (sum+x)%3;
+    //      }
+    //      x = (x*2)%3;
+    //  }
+    //  if(sum==0){
+    //      return 1;
+    //  }
+    //  else{
+    //      return 0;                      
+    //  }
+    
+    
+    //even odd rule
+    
+    int odd = 0;
+    int even = 0;
+    
+    for(int i = 0; i<s.length(); i++){
+        if(s.charAt(i)=='1'){
+            if(i%2==0){
+                even++;
             }
-             x= (x*2)%3;
+            else{
+                odd++;
+            }
+        }
         
-        
-        }
-        if(sum==0){
-            return 1;
-        }
-        else{
-            return 0;
-        }
+    }
+    
+    if(Math.abs(odd-even)%3==0){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+     
     }
 }
