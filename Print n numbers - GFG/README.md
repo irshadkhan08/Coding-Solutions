@@ -1,6 +1,6 @@
 # Print n numbers
 ## Easy
-<div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px; color: #000000;">You are given an integer <strong>N</strong>. Print numbers from 1 to N with the help of loops.</span></p>
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size: 18px; color: #000000;">You are given an integer <strong>N</strong>. Print numbers from 1 to N without the help of loops.</span></p>
 <p><span style="color: #000000;"><strong style="font-size: 18px;">Asked in :</strong><span style="font-size: 18px;"> </span><code style="font-size: 18px;">Amazon, Zoho, Paytm</code></span></p>
 <p><span style="font-size: 18px;"><strong>Example 1:</strong></span></p>
 <pre><span style="font-size: 18px;"><strong>Input:</strong>
