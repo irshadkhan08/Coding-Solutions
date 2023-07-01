@@ -16,13 +16,24 @@ using namespace std;
 class Solution {
   public:
     void printN(int n) {
-        // code here
-       
-        for(int i = 1; i<=n; i++){
-            cout<<i<<" ";
-        }
-        cout<<endl;
-  
+    //   for(long long int i=1;i<=n;i++){
+    //         cout<<i<<" ";
+    //     }
+    //     cout<<endl;
+    
+    
+    //second solution without loop
+    
+    //using goto keyword and begin
+    
+    int i = 0;
+    c:
+    i = i+1;
+    cout<<i<<" ";
+    if(i<n){
+        goto c;
+    }
+    cout<<endl;
     }
 };
 
