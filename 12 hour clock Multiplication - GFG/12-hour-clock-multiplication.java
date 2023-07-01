@@ -29,11 +29,13 @@ class Solution {
     static int mulClock(int num1, int num2) {
         // code here
         int mul = num1*num2;
-        if(mul<12){
-            return mul;
-        }
-        else{
-            return mul%12;
-        }
+        // if(mul<12){
+        //     return mul;
+        // }
+        // else{
+        //     return mul%12;
+        // }
+        
+        return mul%12;
     }
 };
