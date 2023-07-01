@@ -37,11 +37,11 @@ class Solution {
    
    
     int i = 0;
-    print:
+    label_name:
     i = i+1;
     cout<<i<<" ";
     if(i<n){
-       goto print ;
+       goto label_name ;
     }
     cout<<endl;
     }
