@@ -27,11 +27,11 @@ class Solution {
     //using goto keyword and begin
     
     int i = 0;
-    c:
+    var:
     i = i+1;
     cout<<i<<" ";
     if(i<n){
-        goto c;
+        goto var;
     }
     cout<<endl;
     }
