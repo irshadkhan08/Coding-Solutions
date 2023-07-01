@@ -22,6 +22,7 @@ class Solution {
             cout<<i<<" ";
         }
         cout<<endl;
+        return;
    
     }
 };
