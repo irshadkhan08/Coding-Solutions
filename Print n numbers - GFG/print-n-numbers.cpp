@@ -26,12 +26,22 @@ class Solution {
     
     //using goto keyword and begin
     
+    // int i = 0;
+    // var:
+    // i = i+1;
+    // cout<<i<<" ";
+    // if(i<n){
+    //     goto var;
+    // }
+    // cout<<endl;
+   
+   
     int i = 0;
-    var:
+    print:
     i = i+1;
     cout<<i<<" ";
     if(i<n){
-        goto var;
+       goto print ;
     }
     cout<<endl;
     }
