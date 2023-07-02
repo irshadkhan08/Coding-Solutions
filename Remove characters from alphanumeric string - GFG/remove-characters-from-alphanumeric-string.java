@@ -27,7 +27,8 @@ class GFG {
 class Solution {
     String removeCharacters(String S) {
         // code here
-    
+         
+         // this is first method : 01
         // String str = "";
         // for(int i = 0; i<S.length(); i++){
         //     char ch = S.charAt(i);
@@ -37,15 +38,37 @@ class Solution {
         // }
         // return str;
         
-        String str = "";
-        
-        for(int i = 0; i<S.length(); i++){
-            char ch = S.charAt(i);
+        // this is second method : 02
+        // String str = "";
+        // for(int i = 0; i<S.length(); i++){
+        //     char ch = S.charAt(i);
             
-            if(!((ch>=65 && ch<=90) ||(ch>=97 && ch<=122))){
-                str+=ch;
-            }
-        }
-        return str;
+        //     if(!((ch>=65 && ch<=90) ||(ch>=97 && ch<=122))){
+        //         str+=ch;
+        //     }
+        // }
+        // return str;
+        
+        
+        // this is third method : 03
+        
+        // String str = "";
+        // for(int i = 0; i<S.length(); i++){
+        //     char ch = S.charAt(i);
+            
+        //     if(ch>=48 && ch<=57){
+        //         str+=ch;
+        //     }
+        // }
+        // return str;
+        
+        
+        // this is fourth method : 04
+        
+        String str = S.replaceAll("[a-z]","");
+        String str1 = str.replaceAll("[A-Z]","");
+        return str1;
+        
+        
     }
 }
