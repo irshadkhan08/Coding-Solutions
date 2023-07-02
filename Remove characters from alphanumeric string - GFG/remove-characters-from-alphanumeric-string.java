@@ -28,11 +28,22 @@ class Solution {
     String removeCharacters(String S) {
         // code here
     
+        // String str = "";
+        // for(int i = 0; i<S.length(); i++){
+        //     char ch = S.charAt(i);
+        //     if(ch>='0' && ch<='9'){
+        //         str = str+ch;
+        //     }
+        // }
+        // return str;
+        
         String str = "";
+        
         for(int i = 0; i<S.length(); i++){
             char ch = S.charAt(i);
-            if(ch>='0' && ch<='9'){
-                str = str+ch;
+            
+            if(!((ch>=65 && ch<=90) ||(ch>=97 && ch<=122))){
+                str+=ch;
             }
         }
         return str;
