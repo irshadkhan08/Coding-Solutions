@@ -28,13 +28,34 @@ class Solution{
     static int setSetBit(int x, int y, int l, int r){
         // code here
         
-       for(int i = l-1; i<r; i++){
-           int temp = 1<<i;
+       // this is first solution
+    //   for(int i = l-1; i<r; i++){
+    //       int temp = 1<<i;
            
-           if((y&temp)!=0){
-               x = x|((y&temp));
-           }
-       }
+    //       if((y&temp)!=0){
+    //           x = x|((y&temp));
+    //       }
+    //   }
+    //   return x;
+       
+       
+       //second method one code
+       
+    //   for(int i = l; i<=r; i++ ){
+    //       x = x|(y&1<<i-1);
+    //   }
+    //   return x;
+    
+    
+    
+    for(int i = 0; i<=31; i++){
+        
+        if((y&(1<<i))!=0){
+        if(i+1>=l && i+1<=r){
+            x = x|(1<<i);
+        }
+        }
+    }
        return x;
     }
 }
