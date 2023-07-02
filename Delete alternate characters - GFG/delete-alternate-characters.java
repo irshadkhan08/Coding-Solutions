@@ -24,13 +24,31 @@ class GFG {
 class Solution {
     static String delAlternate(String S) {
         // code here
-        String str = "";
         
+        
+        // this is first method : 01
+        // String str = "";
+
+        // for(int i = 0; i<S.length(); i++){
+        //     if(i%2==0){
+        //         str+=S.charAt(i);
+        //     }
+        // }
+        // return str;
+        
+        
+        
+        // this is second method using StringBuffer : 02
+        
+        StringBuffer sb = new StringBuffer();
         for(int i = 0; i<S.length(); i++){
-            if(i%2==0){
-                str+=S.charAt(i);
-            }
+           if(i%2==0){
+               sb.append(S.charAt(i));
+           }
+           else{
+               continue;
+           }
         }
-        return str;
+        return sb.toString();
     }
 }
