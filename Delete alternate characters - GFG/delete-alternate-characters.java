@@ -40,15 +40,20 @@ class Solution {
         
         // this is second method using StringBuffer : 02
         
-        StringBuffer sb = new StringBuffer();
-        for(int i = 0; i<S.length(); i++){
-           if(i%2==0){
-               sb.append(S.charAt(i));
-           }
-           else{
-               continue;
-           }
+        // StringBuffer sb = new StringBuffer();
+        // for(int i = 0; i<S.length(); i++){
+        //   if(i%2==0){
+        //       sb.append(S.charAt(i));
+        //   }
+        // }
+        // return sb.toString();
+        
+        
+        
+        String str = "";
+        for(int i = 0; i<S.length(); i+=2){
+            str+=S.charAt(i);
         }
-        return sb.toString();
+        return str;
     }
 }
