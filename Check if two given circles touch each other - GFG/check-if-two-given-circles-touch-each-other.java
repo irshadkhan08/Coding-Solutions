@@ -30,6 +30,12 @@ class Solution {
     int circleTouch(int x1, int y1, int r1, int x2, int y2, int r2) {
         //Write your code here
         
+        
+        // there are two formulla 
+        // distance of two points = Math.sqrt(Math.pow(x2-x1),2)+Math.pow((y2-y1),2))
+        
+        //second formulla  (c1c2<=((r1+r2)^2))
+        
         int c1c2 = (int)Math.abs((int)Math.pow((x1-x2),2)+(int)Math.pow((y1-y2),2));
         int sum_r1r2 = (r1+r2);
         sum_r1r2 = (int)Math.pow(sum_r1r2,2);
