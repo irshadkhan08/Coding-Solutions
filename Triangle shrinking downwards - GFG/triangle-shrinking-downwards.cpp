@@ -11,16 +11,26 @@ class Solution {
         string ans = "";
         
         for(int i = 0; i<S.size(); i++){
-            for(int j = 0; j<i; j++){
-                ans = ans+".";
-            }
-            for(int k = i; k<S.size(); k++){
-                ans = ans+S[k];
+            // for(int j = 0; j<i; j++){
+            //     ans = ans+".";
+            // }
+            // for(int k = i; k<S.size(); k++){
+            //     ans = ans+S[k];
+            // }
+            
+            for(int j = 0; j<S.size(); j++){
+                if(i>j){
+                    ans = ans+".";
+                }
+                else{
+                    ans = ans+S[j];
+                }
             }
         }
         return ans;
     }
 };
+
 
 //{ Driver Code Starts.
 int main() {
