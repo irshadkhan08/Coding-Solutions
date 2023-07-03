@@ -51,8 +51,7 @@ class Solution {
         for(int i = 0; i<n; i++){
             sum = sum+arr[i];
             int j = i+1;
-            float total = (float)(sum/j);
-            ans[k++] = total;
+            ans[k++] = (sum/j);
         }
         return ans;
     }
