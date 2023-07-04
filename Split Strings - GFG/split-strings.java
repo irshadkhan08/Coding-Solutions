@@ -66,27 +66,12 @@ class Solution
         dig = S.replaceAll("[^0-9]", "");
         spcChar = S.replaceAll("[A-Za-z0-9]",  "");
         
-        // lt.add(alp.length()>0 ?alp: "-1");
-        // lt.add(alp.length()>0 ? dig: "-1");
-        // lt.add(alp.length()>0 ? spcChar: "-1");
-         lt.add(alp.length() > 0 ? alp : "-1");
-      lt.add(dig.length() > 0 ? dig : "-1");
-      lt.add(spcChar.length() > 0 ? spcChar : "-1");
+    
+        lt.add(alp.length() > 0 ? alp : "-1");
+        lt.add(dig.length() > 0 ? dig : "-1");
+        lt.add(spcChar.length() > 0 ? spcChar : "-1");
         return lt;
-        
-        
-    //      List<String> lt = new ArrayList<>();
-    //   String alp, dig, spcChar;
-    //   alp = S.replaceAll("[^a-zA-Z]","");
-    //   dig = S.replaceAll("[^0-9]", "");
-    //   // for spcl Characters
-    //   spcChar = S.replaceAll("[A-Za-z0-9]", "");
-       
-    //   lt.add(alp.length() > 0 ? alp : "-1");
-    //   lt.add(dig.length() > 0 ? dig : "-1");
-    //   lt.add(spcChar.length() > 0 ? spcChar : "-1");
-       
-    //   return lt;
+    
         
     }
 } 
