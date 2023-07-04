@@ -33,19 +33,17 @@ class Solution{
         
         StringBuilder sb = new StringBuilder();
         
-        
-        
-        for(int i = 1; i<=N; i++){
-            for(int j = 1; j<=i; j++){
-                sb.append(j);
-            }
-            for(int j = i-1; j>=1; j--){
-                sb.append(j);
-            }
-            sb.append(" ");
-        }
-        list.add(sb.toString());
-        return list;
-    
+       for(int i = 1; i<=N; i++)
+      {
+          for(int j = 1; j<=i; j++){
+              sb.append(j);
+          }
+          for(int j = i-1; j>=1; j--){
+              sb.append(j);
+          }
+          sb.append(" ");
+      }
+      list.add(sb.toString());
+      return list;
     }
 }
