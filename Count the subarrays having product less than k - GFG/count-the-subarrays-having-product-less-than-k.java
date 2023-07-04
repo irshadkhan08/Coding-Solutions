@@ -92,20 +92,45 @@ class Solution {
         
         
         
+        // this is first method : 01
+        // Time complexity : o(n^2) 
+        // Space complexity : o(1)
+        
+        // int count = 0;
+        // for(int i = 0; i<n; i++){
+        //     long mul = 1;
+        //     for(int j= i; j<n; j++){
+        //         mul = mul*a[j];
+        //         if(mul<k){
+        //             count++;
+        //         }
+        //         else{
+        //             break;
+        //         }
+        //     }
+        // }
+        // return count;
+        
+        
+        // this is second method : 02;
+        // Time complexity : o(n)
+        // Space complexity : 0(1)
         
         int count = 0;
+        int i = 0;
+        int j = 0;
+        long prod = 1;
         
-        for(int i = 0; i<n; i++){
-            long mul = 1;
-            for(int j= i; j<n; j++){
-                mul = mul*a[j];
-                if(mul<k){
-                    count++;
-                }
-                else{
-                    break;
-                }
+        while(j<n){
+              prod = prod*a[j];
+            while(prod>=k && i<n){
+                prod = prod/a[i];
+                i++;
             }
+            if(prod<k){
+                count+=j-i+1;
+            }
+            j++;
         }
         return count;
     }
