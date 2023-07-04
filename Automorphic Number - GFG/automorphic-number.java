@@ -31,38 +31,59 @@ class Solution
     {
         // Code here
         
-        int p = N*N;
-        int cn1 = 0;
-        int n = N;
-        while(n!=0){
-            cn1++;
-            n = n/10;
-        }
-        int cn2 =0;
-        int i = 0;
-        int sum = 0;
-        while(p!=0){
-            if(i<cn1){
-               // sum = sum*10+p%10;
-                sum = p%10+sum*10;
-                i++;
-            }
-            p  = p/10;
-            if(i==cn1){
-                break;
-            }
-        }
+        // method no : 01
+        // int p = N*N;
+        // int cn1 = 0;
+        // int n = N;
+        // while(n!=0){
+        //     cn1++;
+        //     n = n/10;
+        // }
+        // int cn2 =0;
+        // int i = 0;
+        // int sum = 0;
+        // while(p!=0){
+        //     if(i<cn1){
+        //       // sum = sum*10+p%10;
+        //         sum = p%10+sum*10;
+        //         i++;
+        //     }
+        //     p  = p/10;
+        //     if(i==cn1){
+        //         break;
+        //     }
+        // }
         
-        int Nsum = 0;
-        while(sum!=0){
-            Nsum = 10*Nsum+sum%10;
-            sum = sum/10;
+        // int Nsum = 0;
+        // while(sum!=0){
+        //     Nsum = 10*Nsum+sum%10;
+        //     sum = sum/10;
+        // }
+        // if(Nsum==N){
+        //     return "Automorphic";
+        // }
+        // else{
+        //     return "Not Automorphic";
+        // }
+        
+        
+        // method no : 02
+        
+        int sq = N*N;
+        // int l = ""+N.length();
+        int l = 0;
+        int t = N;
+        while(t!=0){
+            t = t/10;
+            l++;
         }
-        if(Nsum==N){
-            return "Automorphic";
+        int end = (sq%(int)Math.pow(10,l));
+        
+        if(N==end){
+             return "Automorphic";
         }
         else{
-            return "Not Automorphic";
+             return "Not Automorphic";
         }
     }
 }
