@@ -23,10 +23,20 @@ string transform(string s)
 {
     // code here
       
-        s[0] = s[0]-32;
+        // s[0] = s[0]-32;
+        // for(int i = 0; i<s.length(); i++){
+        //     if(s[i]==' '){
+        //         s[i+1] = s[i+1]-32;
+        //     }
+        // }
+        // return s;
+        
+        // second method : 02
+        
+        s[0] = s[0]-'a'+'A';
         for(int i = 0; i<s.length(); i++){
             if(s[i]==' '){
-                s[i+1] = s[i+1]-32;
+                s[i+1] = s[i+1]-'a'+'A';
             }
         }
         return s;
