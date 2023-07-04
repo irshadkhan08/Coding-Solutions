@@ -70,13 +70,13 @@ class Solution
         // method no : 02
         
         int sq = N*N;
-        // int l = ""+N.length();
-        int l = 0;
-        int t = N;
-        while(t!=0){
-            t = t/10;
-            l++;
-        }
+         int l = (""+N).length();
+        // int l = 0;
+        // int t = N;
+        // while(t!=0){
+        //     t = t/10;
+        //     l++;
+        // }
         int end = (sq%(int)Math.pow(10,l));
         
         if(N==end){
