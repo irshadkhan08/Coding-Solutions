@@ -43,10 +43,9 @@ class Solution {
         int miss = 0;
         for(int i = 0; i<n-1; i++){
             if((arr[i]+diff)!=arr[i+1]){
-                miss = arr[i]+diff;
-                break;
+               return arr[i]+diff;
             }
         }
-        return miss;
+        return 0;
     }
 }
