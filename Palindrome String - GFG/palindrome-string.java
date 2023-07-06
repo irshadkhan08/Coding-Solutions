@@ -23,19 +23,16 @@ class GFG {
 //User function Template for Java
 
 class Solution {
-    int isPalindrome(String str) {
+    int isPalindrome(String S) {
         // code here
-        int ans = 0;
-        
         int l = 0;
-        int n = str.length()-1;
-        String s = "";
-        for(int i = n; i>=0; i--){
-            s+=str.charAt(i);
+        int r = S.length()-1;
+        
+        while(l<=r){
+            if(S.charAt(l++)!=S.charAt(r--)){
+                return 0;
+            }
         }
-        if(str.equals(s)){
-            ans = 1;
-        }
-        return ans;
+        return 1;
     }
 };
