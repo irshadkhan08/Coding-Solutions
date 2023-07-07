@@ -21,29 +21,42 @@ class GFG
 {
     long maxSum(long arr[] ,int n)
     {
+        
+        // this is first method : 01
+        // Time complexity : o(n) && space complexity : o(n)
+        
+        // long sum = 0;
+        // Arrays.sort(arr);
+        // long ans[] = new long[n];
+        
+        // int k = 0;
+        // int l = 0;
+        // int r = n-1;
+        
+        // // rearrange array like as : 1 8 2 4
+        // while(l<r){
+        //     ans[k++] = arr[l];
+        //     ans[k++] = arr[r];
+        //     l++;
+        //     r--;
+        // }
+        
+        // for(int i = 1; i<n; i++){
+        //     sum+=Math.abs((ans[i]-ans[i-1]));
+        // }
+        // sum = sum+ans[n-1]-ans[0];
+        
+        // return sum;
+        
+        
+        //This is second method : 02
+        
         long sum = 0;
         Arrays.sort(arr);
-        long ans[] = new long[n];
-        
-        ans[0] = arr[0];
-        ans[1] = arr[n-1];
-        int k = 0;
-        int l = 0;
-        int r = n-1;
-         
-        while(l<r){
-            ans[k++] = arr[l];
-            ans[k++] = arr[r];
-            l++;
-            r--;
+        for(int i = 0; i<n; i++)
+        {
+            sum = sum+Math.abs(arr[i]-arr[n-i-1]);
         }
-        
-
-        for(int i = 1; i<n; i++){
-            sum+=Math.abs((ans[i]-ans[i-1]));
-        }
-        sum = sum+ans[n-1]-ans[0];
-        
         return sum;
     }
 }
