@@ -36,38 +36,62 @@ public class Main {
 class Solution {
     int rowWithMax1s(int arr[][], int n, int m) {
         // code here
+       
+       // method no : 01
+       
+       
+        // int max = Integer.MIN_VALUE;
+        // int sum = 0;
+        // int Max = 0;
+        // int ans = 0;
         
-        int max = Integer.MIN_VALUE;
-        int sum = 0;
-        int Max = 0;
-        int ans = 0;
-        
-        for(int i = 0; i<n; i++){
-            for(int j = 0; j<m; j++){
-                if(arr[i][j]==1){
-                    sum = sum+arr[i][j];
-                    max = Math.max(max,sum);
-                }
+        // for(int i = 0; i<n; i++){
+        //     for(int j = 0; j<m; j++){
+        //         if(arr[i][j]==1){
+        //             sum = sum+arr[i][j];
+        //             max = Math.max(max,sum);
+        //         }
                
+        //     }
+        //      sum = 0;
+        // }
+        
+        
+        // for(int i = 0; i<n; i++){
+        //     for(int j = 0; j<m; j++){
+        //         if(arr[i][j]==1){
+        //             sum = sum+arr[i][j];
+        //             if(sum==max){
+        //                 return i;
+        //             }
+        //         }
+               
+        //     }
+        //      sum = 0;
+        // }
+        
+        // return -1;
+        
+        
+        
+        
+        // method no : 02
+        // Time complexity : o(n+m)
+        int i = 0;
+        int j = m-1;
+        int ans = -1;
+        while(i<n && j>=0){
+            if(arr[i][j]==1){
+                ans = i;
+                j--;
             }
-             sum = 0;
+            else{
+                i++;
+            }
         }
         
+        return ans;
         
-        for(int i = 0; i<n; i++){
-            for(int j = 0; j<m; j++){
-                if(arr[i][j]==1){
-                    sum = sum+arr[i][j];
-                    if(sum==max){
-                        return i;
-                    }
-                }
-               
-            }
-             sum = 0;
-        }
-        
-        return -1;
-        
+  
     }
 }
