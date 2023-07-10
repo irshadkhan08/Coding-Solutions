@@ -49,7 +49,9 @@ class Solution {
     {
     //   hSet<Integer>();
        
-      Set<Integer>set = new LinkedHashSet<>();
+    //   Set<Integer>set = new LinkedHashSet<>();
+    
+      Set<Integer>set =new  LinkedHashSet<>();
       for(int i = 0; i<N; i++){
         set.add(A[i]);
       }
