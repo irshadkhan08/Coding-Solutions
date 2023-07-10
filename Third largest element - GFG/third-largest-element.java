@@ -32,25 +32,28 @@ class Solution
 	    int fl = -1;
 	    int sl = -1;
 	    int tl = -1;
+	    if(n<3){
+	        return -1;
+	    }
+	   
+	    for(int i = 0; i<n; i++){
+	       
+	       if(a[i]>fl){
+	           tl = sl;
+	           sl = fl;
+	           fl = a[i];
+	       }
+	       else if(a[i]>sl && fl!=a[i]){
+	           tl = sl;
+	           sl = a[i];
+	       }
+	       else if(a[i]>tl && sl!=a[i]){
+	           tl = a[i];
+	       }
+	    }
+
 	    
-	    Arrays.sort(a);
-	    
-	   // for(int i = 0; i<n; i++){
-	   //     if(fl>a[i]){
-	   //         tl = fl;
-	   //         sl = tl;
-	   //         fl = a[i];
-	   //     }
-	   //     else if(tl>a[i] &&sl!=a[i]){
-	   //     tl = a[i];
-	   //     }
-	   // }
-	    
-	   if(n<3){
-	       return -1;
-	   }
-	   else{
-	       return a[n-3];
-	   }
+	   return tl;
+	  
     }
 }
