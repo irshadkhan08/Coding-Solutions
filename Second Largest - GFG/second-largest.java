@@ -41,19 +41,20 @@ class Solution {
         
         for(int i = 0;i<n; i++){
             if(first<arr[i]){
+                second = first;
                 first = arr[i];
             }
-        }
-        
-        for(int i = 0; i<n; i++){
-            if(first==arr[i]){
-                continue;
-            }
-            else if(arr[i]>=second && first>second){
+            else if(arr[i]>second && arr[i]!=first){
                 second = arr[i];
             }
         }
-        return second;
+        if(second==Integer.MIN_VALUE){
+            return -1;
+        }
+        else{
+            return second;
+        }
+     
        
     }
 }
