@@ -36,10 +36,7 @@ class Solution {
         int count = 1;
         
         for(int i = 0; i<N-1; i++){
-            if(A[i]==A[i+1]){
-                continue;
-            }
-            else{
+            if(A[i]!=A[i+1]){
                 A[count]=A[i+1];
                 count++;
             }
