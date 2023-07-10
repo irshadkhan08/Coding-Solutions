@@ -37,8 +37,8 @@ class Solution {
         
         for(int i = 0; i<N-1; i++){
             if(A[i]!=A[i+1]){
-                A[count]=A[i+1];
-                count++;
+                A[count++]=A[i+1];
+               
             }
         }
         return count;
