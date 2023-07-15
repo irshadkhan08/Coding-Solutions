@@ -57,13 +57,15 @@ class GfG{
         
          Stack<Integer>st = new Stack<Integer>();
          
-        while(!q.isEmpty()){
-            st.push(q.peek());
-            q.poll();
-        }
-        while(!st.isEmpty()){
-            ans.add(st.pop());
-        }
-        return ans;
+         while(!q.isEmpty()){
+             st.push(q.peek());
+             q.poll();
+         }
+         
+         while(!st.isEmpty()){
+             q.add(st.pop());
+         }
+       
+       return q;
     }
 }
