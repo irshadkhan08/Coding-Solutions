@@ -114,31 +114,107 @@ class Solution{
         //Time complexity in : o(n)
         //Space Complexity in : o(n)
         
+        // int n = arr.length;
+        // int ans[] = new int[n];
+        // int k = 0;
+        
+        // for(int i = 0; i<n; i++){
+        //     if(arr[i]<a){
+        //         ans[k++] = arr[i];
+        //     }
+        // }
+        
+        // for(int i = 0; i<n; i++){
+        //     if(arr[i]>=a && arr[i]<=b){
+        //         ans[k++] = arr[i];
+        //     }
+        // }
+        
+        // for(int i = 0; i<n; i++){
+        //     if(arr[i]>b){
+        //         ans[k++] = arr[i];
+        //     }
+        // }
+        
+        // for(int i= 0; i<n; i++){
+        //     arr[i] = ans[i];
+        // }
+        
+        
+        //method : 03
+        // Time complexity in : o(n)
+        //space complexity in : o(1)
+        
+        
+        int l = 0;
+        int r = arr.length-1;
+        
         int n = arr.length;
-        int ans[] = new int[n];
-        int k = 0;
         
-        for(int i = 0; i<n; i++){
+        for(int i = 0; i<=r; i++){
+            
+    
             if(arr[i]<a){
-                ans[k++] = arr[i];
+                int temp = arr[i];
+                arr[i] = arr[l];
+                arr[l] = temp;
+                l++;
+            }
+            
+            else if(b<arr[i]){
+                int temp = arr[i];
+                arr[i] = arr[r];
+                arr[r] = temp;
+                r--;
+                i--;
+        
             }
         }
         
-        for(int i = 0; i<n; i++){
-            if(arr[i]>=a && arr[i]<=b){
-                ans[k++] = arr[i];
-            }
-        }
         
-        for(int i = 0; i<n; i++){
-            if(arr[i]>b){
-                ans[k++] = arr[i];
-            }
-        }
         
-        for(int i= 0; i<n; i++){
-            arr[i] = ans[i];
-        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // int n = arr.length;
+        // int l = 0;
+        // int r = n-1;
+        
+        // while(l<=r){
+        //     // if(arr[l]>arr[l+1]){
+        //     //     int temp = arr[l];
+        //     //     arr[l] = arr[l+1];
+        //     //     arr[l+1] = temp;
+        //     // }
+        //     if(arr[l]>arr[r]){
+        //         int temp = arr[l];
+        //         arr[l] = arr[r];
+        //         arr[r] = temp;
+        //         r--;
+        //     }
+        //     else{
+        //         l++;
+        //     }
+        // }
         
     }
 }
