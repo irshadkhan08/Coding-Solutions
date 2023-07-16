@@ -29,25 +29,83 @@ class Solution {
     long maxProduct(int[] arr, int n) {
         // code here
         
+       long ans = Integer.MIN_VALUE;
         
-        long ans = arr[0];
-        long max = ans;
-        long min = ans;
-        for(int i = 1; i<n; i++){
+       
+        long pre = 1;
+        long suff = 1;
+        
+        for(int i = 0; i<n; i++){
+            if(pre==0)pre = 1;
+            if(suff==0)suff=1;
             
-
-           if(arr[i]<0){
-               long temp = max;
-               max = min;
-               min = temp;
-           }
-           max = Math.max(arr[i],max*arr[i]);
-           min = Math.min(arr[i],min*arr[i]);
-           
-           ans = Math.max(ans,max);
+            pre = pre*arr[i];
+            suff = suff*arr[n-i-1];
+             
+            ans = Math.max(ans,Math.max(pre,suff));
             
         }
-        return ans;
+        
+        
+         return (long)ans;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // long ans = 0;
+        // long mul = 1;
+        
+        // for(int i = 0; i<n; i++){
+        //     for(int j = i; j<n; j++){
+        //         if(arr[j]==0||arr[i]==0){
+        //             mul = 1;
+        //             continue;
+        //         }
+        //         else{
+        //         mul = mul*arr[j];
+        //         ans = Math.max(ans,mul);
+        //         }
+            
+        //     }
+        // }
+        
+        // return ans;
+        // long ans = arr[0];
+        // long max = ans;
+        // long min = ans;
+        // for(int i = 1; i<n; i++){
+            
+
+        //   if(arr[i]<0){
+        //       long temp = max;
+        //       max = min;
+        //       min = temp;
+        //   }
+        //   max = Math.max(arr[i],max*arr[i]);
+        //   min = Math.min(arr[i],min*arr[i]);
+           
+        //   ans = Math.max(ans,max);
+            
+        // }
+        // return ans;
     //     long ans = Long.MIN_VALUE;
         
     //     int zero = 0;
