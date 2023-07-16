@@ -108,6 +108,37 @@ class Solution{
         //method : 01
         //sorting in (nlog(n))
         
-        Arrays.sort(arr);
+        // Arrays.sort(arr);
+        
+        //method : 02 
+        //Time complexity in : o(n)
+        //Space Complexity in : o(n)
+        
+        int n = arr.length;
+        int ans[] = new int[n];
+        int k = 0;
+        
+        for(int i = 0; i<n; i++){
+            if(arr[i]<a){
+                ans[k++] = arr[i];
+            }
+        }
+        
+        for(int i = 0; i<n; i++){
+            if(arr[i]>=a && arr[i]<=b){
+                ans[k++] = arr[i];
+            }
+        }
+        
+        for(int i = 0; i<n; i++){
+            if(arr[i]>b){
+                ans[k++] = arr[i];
+            }
+        }
+        
+        for(int i= 0; i<n; i++){
+            arr[i] = ans[i];
+        }
+        
     }
 }
