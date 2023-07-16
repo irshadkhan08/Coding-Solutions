@@ -149,72 +149,23 @@ class Solution{
         int l = 0;
         int r = arr.length-1;
         
-        int n = arr.length;
-        
         for(int i = 0; i<=r; i++){
-            
-    
             if(arr[i]<a){
                 int temp = arr[i];
                 arr[i] = arr[l];
                 arr[l] = temp;
                 l++;
+               
             }
-            
-            else if(b<arr[i]){
+            else if(arr[i]>b){
                 int temp = arr[i];
                 arr[i] = arr[r];
                 arr[r] = temp;
-                r--;
                 i--;
-        
+                r--;
             }
+       
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        // int n = arr.length;
-        // int l = 0;
-        // int r = n-1;
-        
-        // while(l<=r){
-        //     // if(arr[l]>arr[l+1]){
-        //     //     int temp = arr[l];
-        //     //     arr[l] = arr[l+1];
-        //     //     arr[l+1] = temp;
-        //     // }
-        //     if(arr[l]>arr[r]){
-        //         int temp = arr[l];
-        //         arr[l] = arr[r];
-        //         arr[r] = temp;
-        //         r--;
-        //     }
-        //     else{
-        //         l++;
-        //     }
-        // }
         
     }
 }
