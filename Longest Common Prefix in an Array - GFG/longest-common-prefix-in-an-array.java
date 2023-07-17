@@ -28,34 +28,73 @@ class GFG
 class Solution{
     String longestCommonPrefix(String arr[], int n){
         // code here
-        Arrays.sort(arr);
+        
+        //Time complexity : o(nlong(n))
+      
+        // Arrays.sort(arr);
+        // char a[] = arr[0].toCharArray();
+        // char b[] = arr[n-1].toCharArray();
+        
+        // String ans = "";
+        // int i = 0;
+        // int j = 0;
+        // boolean istrue = false;
+        // while(i<a.length && j<b.length){
+        //     if(a[i]==b[j]){
+        //         istrue = true;
+        //         ans = ans+a[i];
+        //           i++;
+        //           j++;
+        //     }
+        //     else{
+        //         break;
+        //     }
+        // }
+        // if(istrue){
+        //     return ans;
+        // }
+        // else{
+        //     return "-1";
+        // }
         
         
-        char a[] = arr[0].toCharArray();
-        char b[] = arr[n-1].toCharArray();
         
-        String ans = "";
+        // method :02
         
+        String ans = arr[0];
+        
+        for(int i = 0;i<n-1; i++){
+            
+            String x = compare(ans,arr[i+1]);
+            if(x.equals("")){
+                return "-1";
+            }
+            else{
+                ans  = x;
+            }
+        }
+        return ans;
+        
+    }
+    public String compare(String a,String b){
         
         int i = 0;
         int j = 0;
-        boolean istrue = false;
-        while(i<a.length && j<b.length){
-            if(a[i]==b[j]){
-                istrue = true;
-                ans = ans+a[i];
-                  i++;
-                 j++;
+        String res = "";
+        while(i<a.length()&& j<b.length()){
+            
+            if(a.charAt(i)==b.charAt(j)){
+                res = res+a.charAt(i);
             }
             else{
-                break;
+                return res;
             }
+         
+            i++;
+            j++;
         }
-        if(istrue){
-            return ans;
-        }
-        else{
-            return "-1";
-        }
+        
+        return res;
     }
+    
 }
