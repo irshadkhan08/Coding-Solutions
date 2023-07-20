@@ -38,26 +38,64 @@ class Solution
     
        // Your code Here
        Arrays.sort(arr);
-       for(int i = n-1; i>=0; i--){
-           int l = 0;
-           int r = i-1;
+    //   for(int i = n-1; i>=0; i--){
+    //       int l = 0;
+    //       int r = i-1;
            
-           while(l<r){
-            //   int sum = arr[l]+arr[r]+arr[i];
+    //       while(l<r){
+    //         //   int sum = arr[l]+arr[r]+arr[i];
                
-               if(arr[l]+arr[r]+arr[i]==X){
-                   return true;
-               }
-               else if(arr[l]+arr[r]+arr[i]<X){
-                   l++;
-               }
-               else{
-                   r--;
-               }
-           }
-       }
+    //           if(arr[l]+arr[r]+arr[i]==X){
+    //               return true;
+    //           }
+    //           else if(arr[l]+arr[r]+arr[i]<X){
+    //               l++;
+    //           }
+    //           else{
+    //               r--;
+    //           }
+    //       }
+    //   }
        
-       return false;
+    //   return false;
+    
+    
+    for(int i = 0; i<n; i++)
+    {
+        int k = X-arr[i];
+        
+        int l = i+1;
+        int r = n-1;
+        
+        while(l<r){
+        
+            
+            if(arr[l]+arr[r]==k){
+                return true;
+            }
+            else if(arr[l]+arr[r]<k){
+                l++;
+            }
+            else{
+                r--;
+            }
+            
+        }
+    }
+    
+    return false;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     }
 }
