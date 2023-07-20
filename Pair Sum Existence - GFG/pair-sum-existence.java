@@ -38,36 +38,65 @@ class Geeks
     {
         // add your code here
         
-        int l = 0;
-        int r = n-1;
         
-        Arrays.sort(arr);
-        if(r%2==0){
-        while(l<r){
-            if(arr[l]+arr[r]==sum){
-                return 1;
-            }
-            else if(arr[l]+arr[r]<sum){
-                l++;
-            }
-            else{
-                r--;
-            }
-        }
-        }
-        else{
-            while(l<r){
-            if(arr[l]+arr[r]==sum){
-                return 1;
-            }
-            else if(arr[l]+arr[r]<sum){
-                l++;
-            }
-            else{
-                r--;
-            }
-        }
-        }
+        // time complexity is : O(nlogn)
+        // int l = 0;
+        // int r = n-1;
+        
+        // Arrays.sort(arr);
+        // if(r%2==0){
+        // while(l<r){
+        //     if(arr[l]+arr[r]==sum){
+        //         return 1;
+        //     }
+        //     else if(arr[l]+arr[r]<sum){
+        //         l++;
+        //     }
+        //     else{
+        //         r--;
+        //     }
+        // }
+        // }
+        // else{
+        //     while(l<r){
+        //     if(arr[l]+arr[r]==sum){
+        //         return 1;
+        //     }
+        //     else if(arr[l]+arr[r]<sum){
+        //         l++;
+        //     }
+        //     else{
+        //         r--;
+        //     }
+        // }
+        // }
+        // return 0;
+        
+      
+      // second method : 02;
+      
+      // Time complexity : o(n)
+      //Space Complextiy : o(n)
+        
+        
+      int l= 0;
+      int r = n-1;
+      
+      HashSet<Integer>ans = new HashSet<Integer>();
+      
+      for(int i = 0; i<n; i++){
+          int temp = sum-arr[i];
+          
+          if(ans.contains(temp)){
+              return 1;
+          }
+          else{
+              ans.add(arr[i]);
+          }
+      }
         return 0;
+        
+
+        
     }
 }
