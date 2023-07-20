@@ -20,60 +20,84 @@ import java.util.*;
 class Solution{
     
   
-    int Countpair(int a[], int n, int sum)
+    int Countpair(int arr[], int n, int sum)
     {
         // Complete the function
-        int l = 0;
-        int r = n-1;
+    //     int l = 0;
+    //     int r = n-1;
         
-        int count = 0;
+    //     int count = 0;
+    //     if(r%2==0){
+    //     while(l<r){
         
+    //         if(a[l]+a[r]==sum){
+    //             count++;
+    //             l++;
+    //             r--;
+    //         }
+    //         else if(a[l]+a[r]<sum){
+    //             l++;
+    //         }
+    //         else{
+    //             r--;
+    //         }
+    //     }
+    //     }
+    //     else{
+    //         while(l<r){
         
+    //         if(a[l]+a[r]==sum){
+    //             count++;
+    //             l++;
+    //             r--;
+    //         }
+    //         else if(a[l]+a[r]<sum){
+    //             l++;
+    //         }
+    //         else{
+    //             r--;
+    //         }
+    //     }
+    //     }
+      
+    //   if(count>0){
+    //       return count;
+    //   }
+    //   else{
+    //       return -1;
+    //   }
+    
+    
+    int l = 0;
+    int r = n-1;
+    
+    int count = 0;
+    
+    while(l<r){
+        int k = arr[l]+arr[r];
         
-        
-        
-        if(r%2==0){
-        while(l<r){
-        
-            if(a[l]+a[r]==sum){
-                count++;
-                l++;
-                r--;
-            }
-            else if(a[l]+a[r]<sum){
-                l++;
-            }
-            else{
-                r--;
-            }
+        if(k==sum){
+            count++;
+            l++;
+            r--;
         }
+        else if(k<sum){
+            l++;
         }
         else{
-            while(l<r){
-        
-            if(a[l]+a[r]==sum){
-                count++;
-                l++;
-                r--;
-            }
-            else if(a[l]+a[r]<sum){
-                l++;
-            }
-            else{
-                r--;
-            }
+           r--;
         }
-        }
-      
-      if(count>0){
-          return count;
-      }
-      else{
-          return -1;
-      }
     }
-  
     
+    if(count>0){
+        return count;
+    }
+    else{
+        return -1;
+    }
+    
+ 
+    }
 }
 
 
