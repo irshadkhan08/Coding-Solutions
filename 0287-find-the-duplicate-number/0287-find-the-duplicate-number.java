@@ -9,7 +9,7 @@ class Solution {
             }
            else{
                r = nums[i];
-}
+            }
         }
         
         return r;
