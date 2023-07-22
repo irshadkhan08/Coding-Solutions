@@ -19,20 +19,38 @@ class Solution
     boolean check_elements(int arr[], int n, int A, int B)
     {
       
-       Arrays.sort(arr);
+    //   Arrays.sort(arr);
        
-       for(int i = 0; i<n; i++){
-           if(arr[i]==A){
-               A++;
-           }
-       }
+    //   for(int i = 0; i<n; i++){
+    //       if(arr[i]==A){
+    //           A++;
+    //       }
+    //   }
        
-       if(A>B){
-           return true;
-       }
-       else{
-           return false;
-       }
+    //   if(A>B){
+    //       return true;
+    //   }
+    //   else{
+    //       return false;
+    //   }
+    
+    
+    
+    
+    
+ 
+    HashSet<Integer>set = new HashSet<Integer>();
+    for(int i =0; i<n; i++){
+        if(A<=arr[i] && arr[i]<=B){
+            set.add(arr[i]);
+        }
+    }
+    if(set.size()==B-A+1){
+        return true;
+    }
+    else{
+        return false;
+    }
     }
 }
 
