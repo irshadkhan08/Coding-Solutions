@@ -28,13 +28,21 @@ class GFG {
 class Solution {
     static long squaresInMatrix(int m, int n) {
         // code here
-        long sum = 0;
-      while(m!=0 && n!=0){
-          int ans = m*n;
-          m--;
-          n--;
-          sum = sum+ans;
-      }
-      return sum;
+    //     long sum = 0;
+    //   while(m!=0 && n!=0){
+    //       int ans = m*n;
+    //       m--;
+    //       n--;
+    //       sum = sum+ans;
+    //   }
+    //   return sum;
+    
+ 
+ // using recursion 
+ 
+    if(n==0||m==0){
+        return 0;
+    }
+    return m*n+squaresInMatrix(m-1,n-1);
     }
 };
