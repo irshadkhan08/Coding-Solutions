@@ -41,67 +41,29 @@ class Solution{
     // n is the size of array
     static int findFloor(long arr[], int n, long x)
     {
-        
-        
-        
+        int ans = 0;
         int l = 0;
         int r = n-1;
-        int ans= -1;
+        
         while(l<=r){
             int mid = (l+r)/2;
+            
             if(arr[mid]<=x){
+                ans = mid;
                 l = mid+1;
-                ans = (int)Math.floor(mid);
             }
             else{
                 r = mid-1;
             }
         }
-        return ans;
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        // int l = 0;
-        // int r = arr.length-1;
-        // int ans = -1;
-        // while(l<=r){
-        //     int mid = (l+r)/2;
-            
-          
-        //     if(arr[mid]<=x){
-        //         l = mid+1;
-        //         ans = (int)Math.floor(mid);
-        //         break;
-        //     }
-        //     else{
-        //         r = mid-1;
-        //     }
-        // }
-        // return -1;
+        if(ans==0)
+        {
+            return -1;
+        }
+        else{
+            return ans;
+        }
     }
     
 }
