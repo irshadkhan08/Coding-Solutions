@@ -30,18 +30,41 @@ class Solution
     public int countOccurence(int[] arr, int n, int k) 
     {
         // your code here,return the answer
+        // HashMap<Integer,Integer>map = new HashMap<>();
         
-        HashMap<Integer,Integer>map = new HashMap<>();
-        for(int i = 0; i<arr.length; i++){
-            map.put(arr[i],map.getOrDefault(arr[i],0)+1);
+        // for(int i = 0; i<n; i++){
+        //     map.put(arr[i],map.getOrDefault(arr[i],0)+1);
+        // }
+        // int count = 0;
+        
+        // for(Map.Entry<Integer,Integer> m : map.entrySet()){
+        //     if(m.getValue()>n/k){
+        //         count++;
+        //     }
+        // }
+        
+        // for(int v : map.values()){
+        //     if(v>n/k){
+        //         count++;
+        //     }
+        // }
+        
+  
+        // return count;
+        
+        
+        int freq[] = new int[10001];
+        
+        for(int i = 0; i<n; i++){
+            freq[arr[i]]++;
         }
         int count = 0;
-        for(int  v : map.values()){
-            if(v>n/k){
+        for(int j = 0; j<10001; j++){
+            if(freq[j]>n/k){
                 count++;
             }
         }
+        
         return count;
     }
 }
-
