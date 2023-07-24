@@ -44,24 +44,28 @@ class Solution
     public void sortIt(long arr[], long n)
     {
         //code here.
-        long ans[] = new long[(int)n];
-        int k = 0;
         Arrays.sort(arr);
+       
+       long ans[] = new long[(int)n];
+       
+       int k = 0;
+       for(int i = (int)n-1; i>=0; i--){
+           if(arr[i]%2==1){
+               ans[k++] = arr[i];
+           }
+       }
+       
+       for(int i = 0; i<n; i++){
+           if(arr[i]%2==0){
+               ans[k++] = arr[i];
+           }
+       }
+       
+       for(int i = 0; i<n; i++)
+       {
+           arr[i] = ans[i];
+       }
         
-        for(int i = (int)n-1; i>=0; i--){
-            if(arr[i]%2==1){
-                ans[k++] = arr[i];
-            }
-        }
         
-        for(int i = 0; i<n; i++){
-            if(arr[i]%2==0){
-                ans[k++] = arr[i];
-            }
-        }
-        
-        for(int i = 0; i<n; i++){
-            arr[i] = ans[i];
-        }
     }
 }
