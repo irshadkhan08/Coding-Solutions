@@ -33,37 +33,47 @@ class Solution
 	public boolean findTriplets(int arr[] , int n)
     {
         //add code here.
-        // for(int i = 0; i<n-2; i++){
-        //     for(int j= i+1;j<n-1; j++ ){
-        //         for(int k = j+1; k<n; k++){
-        //             if(arr[i]+arr[j]+arr[k]!=0){
-        //                 return true;
-        //             }
-        //         }
-        //     }
-        // }
-        // return false;
         
         
+    //       Arrays.sort(arr);
+    //   for(int i = n-1; i>=0; i--){
+    //       int l = 0;
+    //       int r = i-1;
+           
+    //       while(l<r){
+    //         //   int sum = arr[l]+arr[r]+arr[i];
+               
+    //           if(arr[l]+arr[r]+arr[i]==X){
+    //               return true;
+    //           }
+    //           else if(arr[l]+arr[r]+arr[i]<X){
+    //               l++;
+    //           }
+    //           else{
+    //               r--;
+    //           }
+    //       }
+    //   }
         
-        Arrays.sort(arr);
-        
-        for(int i = 0; i<n-1; i++){
-            int l = i+1;
-            int r = n-1;
-            
-            while(l<r){
-                if(arr[i]+arr[l]+arr[r]==0){
-                    return true;
-                }
-                else if(arr[i]+arr[l]+arr[r]<0){
-                    l++;
-                }
-                else{
-                    r--;
-                }
-            }
-        }
-        return false;
+
+    // 
+      Arrays.sort(arr);
+      for(int i = n-1; i>=0; i--){
+          int l = 0;
+          int r = i-1;
+          
+          while(l<r){
+              if(arr[l]+arr[r]+arr[i]==0){
+                  return true;
+              }
+              else if(arr[l]+arr[r]+arr[i]<0){
+                  l++;
+              }
+              else{
+                  r--;
+              }
+          }
+      }
+      return false;
     }
 }
