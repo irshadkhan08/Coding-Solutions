@@ -32,13 +32,28 @@ class Sol
     {
         // your code here
         int count = 0;
-        for(long i = 10; i<=N; i++){
-              long sum = digitSum(i);
-              if(i-sum>=K){
-                  count++;
-              }
+        // for(long i = 10; i<=N; i++){
+        //       long sum = digitSum(i);
+        //       if(i-sum>=K){
+        //           count++;
+        //       }
+        // }
+        
+        long l = 1;
+        long r = N;
+        
+        while(l<=r){
+            long mid = (l+r)/2;
+            long sum = digitSum(mid);
+            if(mid-sum<K){
+                count++;
+                l = mid+1;
+            }
+            else{
+                r = mid-1;
+            }
         }
-      return count;
+      return N-l+1;
         
     }
     public static long digitSum(long n){
