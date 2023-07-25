@@ -70,17 +70,12 @@ class Solution {
             j++;
         }
    
-        int res[] = new int[set.size()];
         i = 0;
         for(int v : set){
-            res[i++] = v;
+            answer[i++] = v;
         }
-       int k = 0;
-        for(k = 0; k<set.size(); k++){
-            answer[k] = res[k];
-        }
-        
-        return k;
+     
+        return i;
     }
 }
 
