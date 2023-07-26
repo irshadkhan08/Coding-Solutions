@@ -56,26 +56,81 @@ class Solution {
     public static int mergeNsort(int a[], int b[], int n, int m, int answer[])
     {
         // Write your code here
-        HashSet<Integer>set = new HashSet<Integer>();
         
-        int i = 0;
-        while(i<n){
+        
+        HashSet<Integer>set = new HashSet<>();
+        
+        for(int i = 0; i<n; i++){
             set.add(a[i]);
-            i++;
+        }
+        for(int i = 0; i<m; i++){
+            set.add(b[i]);
         }
         
-        int j = 0;
-        while(j<m){
-            set.add(b[j]);
-            j++;
-        }
-   
-        i = 0;
+        int k = 0;
         for(int v : set){
-            answer[i++] = v;
+            answer[k++] = v;
         }
-     
-        return i;
+       
+       return k;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // int k = 0;
+        
+    
+    
+        // for(int i =0; i<n; i++){
+        //     answer[k++] = a[i];
+        // }
+        
+        // for(int i = 0; i<m; i++){
+        //     answer[k++] = b[i];
+        // }
+        
+        // Arrays.sort(answer);
+        
+        // int j = 0;
+        
+        // for(int i = 0; i<n; i++){
+        //     if(answer[i]==answer[i+1]){
+        //         continue;
+        //     }
+        //     else{
+        //         answer[j] = answer[i];
+        //         j++;
+        //     }
+        // }
+        // return j;
+        
+        
+        
+        
+        
+        
+ 
+        
     }
 }
 
