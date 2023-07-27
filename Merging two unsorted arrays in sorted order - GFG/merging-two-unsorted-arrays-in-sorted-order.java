@@ -19,24 +19,51 @@ class Solution
     void sortedMerge(long A[], long B[], long res[], int N,int M)
     {
         // Your code goes here
-        Arrays.sort(A);
-        Arrays.sort(B);
-        
-        long ans[] = new long[A.length+B.length];
-        
-        int k =0;
-        for(int i = 0; i<N; i++){
-            ans[k++] = A[i];
-        }
-        
-        for(int i = 0; i<M; i++){
-            ans[k++] = B[i];
-        }
-        
-        Arrays.sort(ans);
-        for(int i = 0; i<N+M; i++){
-            res[i] = ans[i];
-        }
+       
+       Arrays.sort(A);
+       Arrays.sort(B);
+       
+       int i = 0;
+       int j =0;
+       long ans[] = new long[N+M];
+       int k =0;
+       while(i<N && j<M){
+           
+          if(A[i]==B[j]){
+              ans[k++] = A[i];
+              i++;
+          }
+          else if(A[i]<B[j]){
+               ans[k++] = A[i];
+               i++;
+           }
+        else{
+               ans[k++] = B[j];
+               j++;
+           }
+        //   else{
+        //       ans[k++] = A[i];
+        //       ans[k++] = A[j];
+        //       i++;
+        //       j++;
+        //   }
+       }
+       
+       
+       while(i<N){
+           ans[k++] = A[i];
+           i++;
+       }
+       
+       while(j<M){
+           ans[k++] = B[j];
+           j++;
+       }
+       
+       for(int c = 0; c<ans.length; c++){
+           res[c] = ans[c];
+       }
+       
     }
 }
 
