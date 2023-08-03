@@ -54,10 +54,17 @@ class Solution {
             }
         }
         
+        long min = Integer.MAX_VALUE;
+        for(int i = 0; i<n; i++){
+            if(min>a[i]){
+                min = a[i];
+            }
+        }
+       
         Arrays.sort(a);
         int r = k-c;
             if(r%2==1){
-            a[0] = (-1)*a[0];
+            a[0] = (-1)*min;
             }
         
         long sum = 0;
