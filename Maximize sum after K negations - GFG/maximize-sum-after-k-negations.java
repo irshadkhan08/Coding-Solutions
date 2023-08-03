@@ -34,6 +34,8 @@ class GFG {
 // } Driver Code Ends
 
 
+
+
 //User function Template for Java
 
 
@@ -41,31 +43,30 @@ class Solution {
 
     public static long maximizeSum(long a[], int n, int k)
     {
-        // Your code goes here   
-        
+        // Your code goes here  
         Arrays.sort(a);
         int c = 0;
+        
         for(int i = 0; i<n; i++){
-            if(a[i]<0 && k>0){
-                a[i] = -a[i];
-                k--;
+            if(a[i]<0 && c<k){
+                a[i]= (-1)*a[i];
+                c++;
             }
         }
         
-        long min = Integer.MAX_VALUE;
-        long sum = 0;
-        for(int i = 0; i<n; i++){
-            if(min>a[i]){
-                min = a[i];
+        Arrays.sort(a);
+        int r = k-c;
+            if(r%2==1){
+            a[0] = (-1)*a[0];
             }
+        
+        long sum = 0;
+        
+        for(int i = 0; i<n; i++){
             sum = sum+a[i];
         }
         
-      
-        if(k%2==1){
-            sum = sum-2*min;
-        }
-        
         return sum;
+        
     }
 }
