@@ -69,7 +69,7 @@ class Solution {
         int ans = Integer.MIN_VALUE;
         int count = 0;
        while(j<n){
-           if(arr[j]==0 && zero<k){
+           if(arr[j]==0  && zero<k){
                count++;
                if(arr[j]==0){
                    zero++;
