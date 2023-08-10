@@ -49,31 +49,32 @@ class Solution{
         ArrayList<ArrayList<Integer>>ans = new ArrayList<>();
         int sell = 0;
         int buy = 0;
-    
+        
         for(int i = 0; i<n-1; i++){
             if(arr[i+1]>arr[i]){
               sell++;
             }
             else{
+
                 if(sell>buy){
-               ArrayList<Integer>list = new ArrayList<>();
-               list.add(buy);
-               list.add(sell);
-               ans.add(list);
+                    ArrayList<Integer>list = new ArrayList<>();
+                    list.add(buy);
+                    list.add(sell);
+                    ans.add(list);
+                }
+               sell = i+1;
+               buy = i+1;
             }
-            sell = i+1;
-            buy = i+1;
+        }
+          if(sell>buy){
+                    ArrayList<Integer>list = new ArrayList<>();
+                    list.add(buy);
+                    list.add(sell);
+                    ans.add(list);
+                    return ans;
             }
-        }
-        if(sell>buy){
-            ArrayList<Integer>list = new ArrayList<>();
-            list.add(buy);
-            list.add(sell);
-            ans.add(list);
-            return ans;
-        }
-        else{
-            return ans;
-        }
+            else{
+                return ans;
+            }
     }
 }
