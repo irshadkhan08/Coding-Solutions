@@ -37,10 +37,9 @@ class Solution {
         // code here
         
         Arrays.sort(arr);
-        k = k;
-        int min = arr[0];
-        int max = arr[n-1];
-        int ans = max-min;
+        int min = 0;
+        int max = 0;
+        int ans = arr[n-1]-arr[0];
         
         for(int i = 1; i<n; i++){
             int a = arr[i-1]+k;
