@@ -39,10 +39,20 @@ class FormatingArray{
 
 class GfG
 {
-	public int[] formatArray(int[] a,int n)
+	public int[] formatArray(int[] arr,int n)
         {
         // add code here.
-        Arrays.sort(a);
-        return a;
+        // Arrays.sort(a);
+        // return a;
+        
+        
+        for(int i = 1; i<n; i+=2){
+            if(arr[i-1]>arr[i]){
+                int temp = arr[i-1];
+                arr[i-1] = arr[i];
+                arr[i] = temp;
+            }
+        }
+        return arr;
 	}
 }
