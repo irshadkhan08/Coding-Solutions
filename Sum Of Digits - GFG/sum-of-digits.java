@@ -24,15 +24,12 @@ class GFG
 
 //User function Template for Java
 class Solution{
-    static int sumOfDigits(int N) {
+    static int sumOfDigits(int n) {
         // code here
-        int sum = 0;
-        
-        while(N!=0){
-            sum+=N%10;
-            N = N/10;
+        if(n==0){
+            return 0;
         }
-        return sum;
+        return (n%10)+sumOfDigits(n/10);
     }
 }
        
