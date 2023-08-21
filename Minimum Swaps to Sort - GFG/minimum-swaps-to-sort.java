@@ -30,7 +30,7 @@ class GFG
 class Solution
 {
     //Function to find the minimum number of swaps required to sort the array.
-     public static void swap(int i,int j,int arr[]){
+    public static void swap(int i , int j, int arr[]){
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
@@ -38,26 +38,34 @@ class Solution
     public int minSwaps(int arr[])
     {
         // Code here
-       HashMap<Integer,Integer>map = new HashMap<>();
-
-       int numsSort[] = arr.clone();
-       Arrays.sort(numsSort);
-       for(int i = 0; i<numsSort.length; i++){
-           map.put(numsSort[i],i);
+     
+       int n = arr.length;
+       int ans[] = new int[n];
+       int k = 0;
+       for(int i = 0; i<n; i++){
+           ans[k++] = arr[i];
        }
-        int i = 0;
-        int n = arr.length;
-        int count = 0;
-        while(i<n){
-           if(map.get(arr[i])==i){
+       Arrays.sort(ans);
+       HashMap<Integer,Integer>map = new HashMap<>();
+       for(int i = 0; i<n; i++){
+           map.put(ans[i],i);
+       }
+       int count = 0;
+       int i = 0;
+       while(i<n){
+             if(map.get(arr[i])==i){
                i++;
            }
            else{
-                swap(map.get(arr[i]),i,arr);
-                count++;
-             
+               swap(i,map.get(arr[i]),arr);
+            //   int temp = arr[map.get(i)];
+            //   arr[map.get(i)] =  arr[i];
+            //   arr[i] = temp;
+              count++;
            }
        }
        return count;
+       
+       
     }
 }
