@@ -51,10 +51,12 @@ class Solution
            map.put(ans[i],i);
        }
        int count = 0;
-       int i = 0;
-       while(i<n){
+    //   int i = 0;
+    //   while(i<n){
+    for(int i = 0; i<n; i++){
              if(map.get(arr[i])==i){
-               i++;
+            //   i++;
+            continue;
            }
            else{
                swap(i,map.get(arr[i]),arr);
@@ -62,6 +64,7 @@ class Solution
             //   arr[map.get(i)] =  arr[i];
             //   arr[i] = temp;
               count++;
+              i--;
            }
        }
        return count;
