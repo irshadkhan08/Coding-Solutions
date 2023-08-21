@@ -40,15 +40,13 @@ class Solution
         return a;
     }
     public static void powerSet(String s,int i,String cur,List<String>ans){
-        // if(i==s.length()){
-        //     ans.add(cur);
-        //     return;
-        // }
+
          if(i==s.length()){
             if(!(cur=="")){
-                 ans.add(cur);
+                ans.add(cur);
             }
-          
+        
+        
             return;
         }
         powerSet(s,i+1,cur+s.charAt(i),ans);
