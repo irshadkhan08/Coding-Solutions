@@ -45,9 +45,10 @@ class Solution
         //     return;
         // }
          if(i==s.length()){
-            if(!cur.isEmpty()){
-                ans.add(cur);
+            if(!(cur=="")){
+                 ans.add(cur);
             }
+          
             return;
         }
         powerSet(s,i+1,cur+s.charAt(i),ans);
