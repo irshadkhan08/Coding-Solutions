@@ -38,10 +38,26 @@ class Solution
         // }
         // return B;
         
-        if(A%B==0){
-            return B;
+        // if(A%B==0){
+        //     return B;
+        // }
+        // return gcd(B,A%B);
+        
+        if(B==0){
+            return A;
         }
-        return gcd(B,A%B);
+        if(A<B){
+            return gcd(B,A);
+        }
+        return gcd(A%B,B);
+    
+        
+        
+        
+        
+        
+        
+        
 
     } 
 }
