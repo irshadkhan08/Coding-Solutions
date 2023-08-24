@@ -28,14 +28,20 @@ class Solution
     public int gcd(int A , int B) 
     { 
         //code here
-        while(A!=B){
-            if(A>B){
-                A = A-B;
-            }
-            else{
-                B = B-A;
-            }
+        // while(A!=B){
+        //     if(A>B){
+        //         A = A-B;
+        //     }
+        //     else{
+        //         B = B-A;
+        //     }
+        // }
+        // return B;
+        
+        if(A%B==0){
+            return B;
         }
-        return B;
+        return gcd(B,A%B);
+
     } 
 }
