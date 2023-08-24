@@ -28,18 +28,14 @@ class Solution
     public int gcd(int A , int B) 
     { 
         //code here
-        // int ans = 0;
-        
-        // for(int i = 1; i<=Math.min(A,B); i++){
-        //     if(A%i==0 && B%i==0){
-        //         ans = i;
-        //     }
-        // }
-        // return ans;
-        
-        if(A%B==0){
-            return B;
+        while(A!=B){
+            if(A>B){
+                A = A-B;
+            }
+            else{
+                B = B-A;
+            }
         }
-        return gcd(B,A%B);
+        return A;
     } 
 }
