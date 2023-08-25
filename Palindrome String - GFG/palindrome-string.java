@@ -29,9 +29,11 @@ class Solution {
         int r = S.length()-1;
         
         while(l<=r){
-            if(S.charAt(l++)!=S.charAt(r--)){
+            if(S.charAt(l)!=S.charAt(r)){
                 return 0;
             }
+            l++;
+            r--;
         }
         return 1;
     }
