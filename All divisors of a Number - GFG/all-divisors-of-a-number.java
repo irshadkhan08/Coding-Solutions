@@ -26,18 +26,30 @@ class GFG {
 class Solution {
     public static void print_divisors(int n) {
         // code here
-        ArrayList<Integer>al = new ArrayList<>();
-        for(int i = 1; i*i<=n; i++){
+        // ArrayList<Integer>al = new ArrayList<>();
+        // for(int i = 1; i*i<=n; i++){
+        //     if(n%i==0){
+        //         System.out.print(i+" ");
+        //         if(n/i!=i){
+        //          al.add(i);
+        //         }
+        //     }
+        // }
+        // int size = al.size();
+        // for(int i = size-1; i>=0; i--){
+        //      System.out.print(n/al.get(i)+" ");
+        // }
+        
+        int i = 1;
+        for( i = 1; i*i<=n; i++){
             if(n%i==0){
-                System.out.print(i+" ");
-                if(n/i!=i){
-                 al.add(i);
-                }
+            System.out.print(i+" ");
             }
         }
-        int size = al.size();
-        for(int i = size-1; i>=0; i--){
-             System.out.print(n/al.get(i)+" ");
+        for( i = i-1; i>=1; i--){
+            if(n%i==0 && n/i!=i){
+              System.out.print(n/i+" ");
+            }
         }
     }
 }
