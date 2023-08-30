@@ -40,14 +40,6 @@ class Solution {
         int j = 0;
         int ans = 1;
         Arrays.sort(arr);
-     
-        if(n==2){
-         if(arr[1]-arr[0]<=k){
-            return 1;
-         }
-        }
-        else{
-      
         while(j<n){
             int max = arr[j];
             int min = arr[i];
@@ -59,7 +51,6 @@ class Solution {
                 i++;
             }
             ans = Math.max(ans,j-i);
-        }
         }
         return n-ans;
     }
