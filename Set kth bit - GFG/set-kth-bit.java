@@ -29,8 +29,9 @@ class GFG
 class Solution{
     static int setKthBit(int N,int K){
         // code here
-        int rightShift = (int)Math.pow(2,K);
+        int leftShift = 1<<K;
         
-        return N|rightShift;
+        
+        return N|leftShift;
     }
 }
