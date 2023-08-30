@@ -32,30 +32,24 @@ class GFG
 class Solution{
     int countZeroes(int n){
         // code here
-       
+      
       int l = 0;
       int r = 5*n;
       
-      while(l<=r){
-          int mid = (l+r)/2;
-          int zero = countZero(mid);
+      for(int i = l; i<=r; i++){
+          int zero = zeroCount(i);
           if(zero==n){
               return 5;
-          }
-          else if(zero<n){
-             l = mid+1;
-          }
-          else {
-              r = mid-1;
           }
       }
       return 0;
     }
-    public static int countZero(int n){
+    public static int zeroCount(int n){
         int count = 0;
         while(n>=5){
             n = n/5;
             count = count+n;
+            
         }
         return count;
     }
