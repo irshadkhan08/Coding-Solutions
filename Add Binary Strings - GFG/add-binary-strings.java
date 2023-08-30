@@ -28,97 +28,54 @@ class GFG {
 
 class Solution {
     String addBinary(String s1, String s2) {
-        int carry = 0;
-    int i = s1.length() - 1;
-    int j = s2.length() - 1;
-    
-StringBuilder ans = new StringBuilder();
-    while (i >= 0 || j >= 0 || carry > 0) {
-        int sum = carry;
-        if (i >= 0) {
-            sum += s1.charAt(i--) - '0';
-        }
-        if (j >= 0) {
-            sum += s2.charAt(j--) - '0';
-        }
-        ans.append(sum % 2);
-        carry = sum / 2;
-    }
-
-    // Reverse the order of characters in the result string
-   ans = ans.reverse();
-
-
-
-
-    // StringBuilder ans = new StringBuilder();
-    // int carry = 0;
-    // int i = s1.length() - 1;
-    // int j = s2.length() - 1;
-
-    // while (i >= 0 || j >= 0 || carry > 0) {
-    //     int sum = carry;
-    //     if (i >= 0) {
-    //         sum += s1.charAt(i--) - '0';
-    //     }
-    //     if (j >= 0) {
-    //         sum += s2.charAt(j--) - '0';
-    //     }
-    //     ans.append(sum % 2);
-    //     carry = sum / 2;
-    // }
-    
-    // return ans.reverse().toString();
-        // code here
-    // BigInteger a = BigInteger(s1,2);
-    // // BigInteger b= BigInteger(s1,2);
-    // int a = Integer.parseInt(s1,2);
-    // int b = Integer.parseInt(s2,2);
-    // int c = a+b;
-    // return Integer.toBinaryString(c);
-    
-    // //   String ans ="";
-    // //   int carry = 0;
- 
-    // //   int i = s1.length()-1;
-    // //   int j = s2.length()-1;
-    // //   while(i>=0 || j>=0){
+  
+      int carry = 0;
+      StringBuilder ans = new StringBuilder();
+      int i = s1.length()-1;
+      int j = s2.length()-1;
+      while(i>=0 || j>=0){
           
-    // //       if(i<0){
-    // //           int d= (s2.charAt(j)-'0'+carry);
-    // //           ans= (d%2+ans);
-    // //         //  ans= ans+d;
-    // //           carry = (s2.charAt(j)-'0'+carry)/2;
-    // //           j--;
-    // //       }
-    // //       else if(j<0){
-    // //           int d = (s1.charAt(i)-'0'+carry);
-    // //           ans = (d%2+ans);
-    // //         //  ans= ans+d;
-    // //           carry = (s1.charAt(i)-'0'+carry)/2;
-    // //           i--;
-    // //       }
-    // //       else{
-    // //           int d = (s1.charAt(i)-'0'+s2.charAt(j)-'0'+carry);
-    // //           carry = (s1.charAt(i)-'0'+s2.charAt(j)-'0'+carry)/2;
-    // //           ans= (d%2+ans);
-    // //         // ans = ans+d;
-    // //           i--;
-    // //           j--;
-    // //       }
-    // //   }
-     
-     String res = new String(ans);
-      if(carry==1){
-          res = "1"+res;
+          if(i<0){
+              int d= (s2.charAt(j)-'0'+carry);
+             
+              ans.append(d%2);
+            //  ans= ans+d;
+              carry = (s2.charAt(j)-'0'+carry)/2;
+              j--;
+          }
+          else if(j<0){
+              int d = (s1.charAt(i)-'0'+carry);
+              ans.append(d%2);
+              carry = (s1.charAt(i)-'0'+carry)/2;
+              i--;
+          }
+          else{
+              int d = (s1.charAt(i)-'0'+s2.charAt(j)-'0'+carry);
+              carry = (s1.charAt(i)-'0'+s2.charAt(j)-'0'+carry)/2;
+              ans.append(d%2);
+              i--;
+              j--;
+          }
       }
-      int p = 0;
-      while(res.charAt(p)=='0'){
-          p++;
-      }
-       
+        if(carry!=0){
+        ans.append("1");
+        }
+        String str=ans.reverse().toString();
+      int k=0;
+      while(k< str.length()-1 && str.charAt(k)=='0'){
+              k++;
+       }
+
+return str.substring(k);
+    //     ans.reverse();
         
-      return res.substring(p,res.length());
-      
+    //     String res = ans.toString();
+        
+    //   int idx = 0;
+    //   while(idx<res.length()-1&& res.charAt(i)=='0')
+    //   {
+    //       idx++;
+    //   }
+    //   return res.substring(idx);
     }
 }
