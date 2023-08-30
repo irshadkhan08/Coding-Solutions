@@ -71,7 +71,7 @@ class Solution {
     //  sum.reverse();
       
       int idx = 0;
-      while(idx<ans.length()-1 && ans.charAt(idx)=='0'){
+      while(idx<ans.length() && ans.charAt(idx)=='0'){
           idx++;
       }
       if(idx==ans.length()){
