@@ -60,22 +60,22 @@ class Solution {
         if(carry!=0){
         ans.append("1");
         }
-        String str=ans.reverse().toString();
-      int k=0;
-      while(k< str.length()-1 && str.charAt(k)=='0'){
-              k++;
-       }
+//         String str=ans.reverse().toString();
+//       int k=0;
+//       while(k< str.length()-1 && str.charAt(k)=='0'){
+//               k++;
+//       }
 
-return str.substring(k);
-    //     ans.reverse();
+// return str.substring(k);
+        ans.reverse();
         
-    //     String res = ans.toString();
+        String res = ans.toString();
         
-    //   int idx = 0;
-    //   while(idx<res.length()-1&& res.charAt(i)=='0')
-    //   {
-    //       idx++;
-    //   }
-    //   return res.substring(idx);
+      int idx = 0;
+      while(idx<res.length()-1&& res.charAt(idx)=='0')
+      {
+          idx++;
+      }
+      return res.substring(idx);
     }
 }
