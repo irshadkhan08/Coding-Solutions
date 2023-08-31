@@ -63,38 +63,20 @@ class Solve
         }
         
         Collections.sort(al);
-        // Collections.sort(al);
-        // int count = 0;
-        // for(int i = 0; i<al.size()-1; i++){
-        //     int l = i+1;
-        //     int r = al.size()-1;
-        //     int sum = 0;
-        //     while(l<=r){
-        //         sum = sum+al.get(i)+al.get(l)+al.get(r);
-        //         if(sum==x){
-        //             count++;
-        //         }
-        //         else if(sum<x){
-        //             l++;
-        //         }
-        //         else{
-        //             r--;
-        //         }
-        //     }
-        // }
+        Collections.sort(al);
         int count = 0;
-        int n = al.size();
-          for(int i = 0; i<n-1; i++){
+        for(int i = 0; i<al.size()-1; i++){
             int l = i+1;
-            int r = n-1;
-            
+            int r = al.size()-1;
+            int sum = 0;
             while(l<r){
-                if(al.get(i)+al.get(l)+al.get(r)==x){
+                sum = al.get(i)+al.get(l)+al.get(r);
+                if(sum==x){
                     count++;
                     l++;
                     r--;
                 }
-                else if(al.get(i)+al.get(l)+al.get(r)<x){
+                else if(sum<x){
                     l++;
                 }
                 else{
@@ -103,6 +85,27 @@ class Solve
             }
         }
         return count;
+        // int count = 0;
+        // int n = al.size();
+        //   for(int i = 0; i<n-1; i++){
+        //     int l = i+1;
+        //     int r = n-1;
+            
+        //     while(l<r){
+        //         if(al.get(i)+al.get(l)+al.get(r)==x){
+        //             count++;
+        //             l++;
+        //             r--;
+        //         }
+        //         else if(al.get(i)+al.get(l)+al.get(r)<x){
+        //             l++;
+        //         }
+        //         else{
+        //             r--;
+        //         }
+        //     }
+        // }
+        // return count;
         
     } 
 }
