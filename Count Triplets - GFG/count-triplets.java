@@ -65,7 +65,7 @@ class Solve
         Collections.sort(al);
         Collections.sort(al);
         int count = 0;
-        for(int i = 0; i<al.size()-1; i++){
+        for(int i = 0; i<al.size(); i++){
             int l = i+1;
             int r = al.size()-1;
             int sum = 0;
