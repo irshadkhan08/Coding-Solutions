@@ -76,10 +76,10 @@ class Solve
                     r--;
                 }
                 else if(sum<x){
-                    l++;
+                    r--;
                 }
                 else{
-                    r--;
+                    l++;
                 }
             }
         }
