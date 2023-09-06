@@ -32,8 +32,7 @@ class GFG{
 // User function Template for Java
 
 class Solution{
-    public static void reverse(int arr[],int i, int j){
-        
+    public static void reverse(int arr[],int i,int j){
         while(i<=j){
         int temp = arr[i];
         arr[i] = arr[j];
@@ -43,46 +42,49 @@ class Solution{
         }
     }
     static List<Integer> nextPermutation(int n, int arr[]){
-        // code here
-
-    int k = -1;
+    
     List<Integer>ans = new ArrayList<>();
+    
+    int k = -1;
+    
     for(int i = n-2; i>=0; i--){
         if(arr[i]<arr[i+1]){
-            k =i;
+            k = i;
             break;
+        //   continue;
         }
-    }
-        
-    if(k==-1){
-        reverse(arr,0,n-1);
-        for(int j = 0; j<n; j++){
-            ans.add(arr[j]);
-        }
-        return ans;
-       }
-       else{
-           for(int j = n-1; j>k; j--){
-               if(arr[j]>arr[k]){
-                   int temp = arr[j];
-                   arr[j] = arr[k];
-                   arr[k] = temp;
-                   break;
-               }
-           }
-        //   int pre = k;
-        //     reverse(arr,k,n-1);
-        //     int temp = arr[k-1];
-        //     arr[k-1] = arr[pre];
-        //     arr[pre] = temp;
-       }
-    reverse(arr,k+1,n-1);
-//   Arrays.sort(arr,k,n);
-    for(int j = 0; j<n; j++){
-        ans.add(arr[j]);
-    }
-   return ans;
-        
+        // else{
+        //     // k = i;
+        //     // break;
+        // }
     }
     
+    
+    if(k==-1){
+        reverse(arr,0,n-1);
+        
+        for(int i = 0; i<n; i++){
+            ans.add(arr[i]);
+        }
+        return ans;
+    }
+    else{
+        for(int i = n-1; i>k; i--){
+            if(arr[i]>arr[k]){
+                int temp = arr[i];
+                arr[i] = arr[k];
+                arr[k] = temp;
+                break;
+            }
+        }
+    }
+    
+    reverse(arr,k+1,n-1);
+    for(int i = 0; i<n; i++){
+        ans.add(arr[i]);
+    }
+    return ans;
+
+
+    }
 }
