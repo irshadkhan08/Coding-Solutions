@@ -27,10 +27,11 @@ class Solution {
         
         for(int i = 0; i<S1.length(); i++){
             arr[S1.charAt(i)-'a']++;
+              arr[S2.charAt(i)-'a']--;
         }
-         for(int i = 0; i<S2.length(); i++){
-            arr[S2.charAt(i)-'a']--;
-        }
+        //  for(int i = 0; i<S2.length(); i++){
+        //     arr[S2.charAt(i)-'a']--;
+        // }
         
         for(int i = 0; i<26; i++){
             if(arr[i]!=0)return 0;
