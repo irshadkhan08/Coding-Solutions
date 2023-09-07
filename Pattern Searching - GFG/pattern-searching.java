@@ -26,6 +26,11 @@ class GFG {
 class Solution {
     int search(String text, String pat) {
         // code here
+        int t = text.length();
+        int p = pat.length();
+        if(t<p){
+            return 0;
+        }
         if(text.contains(pat)){
             return 1;
         }
