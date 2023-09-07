@@ -32,11 +32,19 @@ class GFG {
 
 class Solution {
     public static boolean searchPattern(String str, String pat) {
-        // code here
-        if(str.contains(pat)){
-            return true;
-        }
-        return false;
+     
+       int n1 = str.length()-1;
+       int n2 = pat.length()-1;
+       for(int i = 0; i<=n1-n2; i++){
+         int j = 0;
+          for(; j<pat.length(); j++){
+              if(str.charAt(i+j)!=pat.charAt(j)){
+                 break; 
+              }
+          }
+          if(j==pat.length())return true;
+       }
+       return false;
     }
 }
         
