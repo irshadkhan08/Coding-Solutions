@@ -30,34 +30,31 @@ class GFG {
 class Solution {
     public int findSubString( String str) {
         // Your code goes here
-       HashSet<Character>set = new HashSet<>();
-       
-       for(int i = 0; i<str.length(); i++){
-           set.add(str.charAt(i));
-       }
-       int k = set.size();
-       char arr[] = str.toCharArray();
-       int i = 0;
-       int j = 0;
-       int ans = Integer.MAX_VALUE;
-        HashMap<Character, Integer> map = new HashMap<>();
-       while(j<str.length()){
-            map.put(arr[j], map.getOrDefault(arr[j], 0) + 1);
-      
-          if(map.size()==k){
-              
-              while(map.get(arr[i])>1){
-                   map.put(arr[i], map.getOrDefault(arr[i], 0) -1);
-                   i++;
-              }
-             int val = j-i+1;
-             if(val<ans){
-                 ans = val;
-             }
-          }
-          j++;
-       }
-       
-       return ans;
+        HashSet<Character>set = new HashSet<>();
+        int n = str.length();
+        for(int i = 0; i<n; i++){
+            set.add(str.charAt(i));
+        }
+        
+        int k = set.size();
+        
+        char arr[] = str.toCharArray();
+        HashMap<Character,Integer>map = new HashMap<>();
+        int i = 0;
+        int j = 0;
+        int ans = Integer.MAX_VALUE;
+        while(j<n){
+            map.put(arr[j],map.getOrDefault(arr[j],0)+1);
+            
+            if(map.size()==k){
+                while(map.get(arr[i])>1){
+                       map.put(arr[i],map.getOrDefault(arr[i],0)-1);
+                       i++;
+                }
+                ans = Math.min(ans,j-i+1);
+            }
+            j++;
+        }
+        return ans;
     }
 }
