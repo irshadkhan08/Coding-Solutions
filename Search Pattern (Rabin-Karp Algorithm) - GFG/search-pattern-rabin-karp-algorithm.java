@@ -38,11 +38,6 @@ class Solution
     {
         // your code here
         ArrayList<Integer>ans = new ArrayList<>();
-        if(str.length()==0||pat.length()==0){
-            ans.add(-1);
-            return ans;
-        }
-        
         if(!str.contains(pat)){
             ans.add(-1);
             return ans;
