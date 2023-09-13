@@ -26,29 +26,27 @@ class GFG
 // } Driver Code Ends
 
 
-
-
 class Solution{
     static int minJumps(int[] arr){
         // your code here
-     
-     
-     int pos = 0;
-     int jump = 0;
-     int des = 0;
-     for(int i = 0; i<arr.length-1; i++){
-         des = Math.max(des,arr[i]+i);
-         
-         if(pos==i){
-             pos = des;
-             jump++;
-         }
-     }
-     if(pos<arr.length-1){
-         return -1;
-     }
-     else{
-         return jump;
-     }
+        int jump = 0;
+        int d = 0;
+        int pos = 0;
+   
+        for(int i = 0; i<arr.length-1; i++){
+            d = Math.max(d,arr[i]+i);
+            
+            if(pos==i){
+                pos = d;
+                jump++;
+            }
+        }
+       
+        if(pos<arr.length-1){
+            return -1;
+        }
+        else{
+           return jump;
+        }
     }
 }
