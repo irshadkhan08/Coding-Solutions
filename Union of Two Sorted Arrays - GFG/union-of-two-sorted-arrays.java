@@ -74,7 +74,7 @@ class Solution
                 j++;
             }
             else{
-                ans.add(arr2[j]);
+                ans.add(arr1[i]);
                 i++;
                 j++;
             }
