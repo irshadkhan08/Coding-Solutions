@@ -56,18 +56,13 @@ class Solution
     {
         // add your code here
         ArrayList<Integer>ans = new ArrayList<Integer>();
-        
         int i = 0;
         int j = 0;
-        
         while(i<n && j<m){
-            
             while(i+1<n && arr1[i]==arr1[i+1]){
-          
                 i++;
             }
             while(j+1<m && arr2[j]==arr2[j+1]){
-         
                 j++;
             }
             if(arr1[i]<arr2[j]){
