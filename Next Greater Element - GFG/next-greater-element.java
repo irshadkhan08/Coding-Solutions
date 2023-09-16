@@ -9,33 +9,32 @@ class GFG {
     
 	public static void main (String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter ot = new PrintWriter(System.out);
 		int t = Integer.parseInt(br.readLine().trim());
 		while(t-->0){
 		    int n = Integer.parseInt(br.readLine().trim());
 		    String inputLine[] = br.readLine().trim().split(" ");
 		    long[] arr = new long[n];
 		    for(int i=0; i<n; i++)arr[i]=Long.parseLong(inputLine[i]);
-		    long[] res = new Solution().nextLargerElement(arr, n);
+		    Solution ob = new Solution();
+		    long[] res = ob.nextLargerElement(arr, n);
 		    for (int i = 0; i < n; i++) 
-		        System.out.print(res[i] + " ");
-		    System.out.println();
+		        ot.print(res[i] + " ");
+		    ot.println();
 		}
+        ot.close();
 	}
 }
-
 
 
 
 // } Driver Code Ends
 
 
+// User Function Template for JAVA
 
-
-class Solution
-{
-    //Function to find the next greater element for each element of the array.
-    public static long[] nextLargerElement(long[] arr, int n)
-    { 
+class Solution{
+    public static long[] nextLargerElement(long[] arr, int n) { 
         // Your code here
         ArrayList<Long>al = new ArrayList<>();
         long ans[] = new long[n];
