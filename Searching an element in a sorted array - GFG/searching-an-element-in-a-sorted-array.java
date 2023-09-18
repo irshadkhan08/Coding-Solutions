@@ -43,7 +43,7 @@ class Solution{
         // Your code here
         int l = 0;
         int r = N-1;
-        
+        int ans = -1;
         while(l<=r){
             int mid = (l+r)/2;
             
@@ -52,9 +52,11 @@ class Solution{
             }
             else if(arr[mid]<K){
                 l = mid+1;
+                l++;
             }
             else{
                 r = mid-1;
+                r--;
             }
         }
         return -1;
