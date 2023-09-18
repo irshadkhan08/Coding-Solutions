@@ -42,9 +42,21 @@ class Solution{
     static int ternarySearch(int arr[], int N, int K)
     {
         // Your code here
-        for(int i = 0; i<N; i++){
-            if(arr[i]==K){
+        
+        int l = 0;
+        int r = N-1;
+        
+        while(l<=r){
+            int mid = (l+r)/2;
+            
+            if(arr[mid]==K){
                 return 1;
+            }
+            else if(arr[mid]<K){
+                l = mid+1;
+            }
+            else{
+                r = mid-1;
             }
         }
         return -1;
