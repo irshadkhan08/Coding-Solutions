@@ -38,13 +38,12 @@ class Solution
             int rem = n%2;
             if(rem==0){
                 count++;
-                n = n/2;
+                n = n>>1;
             }
             else{
                 return count+1;
             }
         }
         return 0;
-            
     }
 }
