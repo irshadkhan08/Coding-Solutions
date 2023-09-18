@@ -63,23 +63,47 @@ class Solution {
     public static int kthLargest(int N, int K, int[] Arr) {
         // code here
         
-        PriorityQueue<Integer>pq = new PriorityQueue<>(Collections.reverseOrder());
-        int index = 0;
+        ArrayList<Integer>list = new ArrayList<>();
         for(int i = 0; i<N; i++){
             int sum = Arr[i];
-             pq.add(sum);
+            list.add(Arr[i]);
             
             for(int j = i+1; j<N; j++){
-              sum = sum+Arr[j];
-              pq.add(sum);
+                sum  = sum+Arr[j];
+                list.add(sum);
             }
             sum = 0;
         }
+        Collections.sort(list);
+        int ans[] = new int[list.size()];
+        int index = 0;
         
-        for(int i = 0; i<K-1; i++){
-           pq.poll();
+        for(int i = 0; i<list.size(); i++){
+            ans[index++] = list.get(i);
         }
-        return pq.peek();        
+        
+        int res = ans[ans.length-K];
+        return res;
+        
+        
+        
+        // PriorityQueue<Integer>pq = new PriorityQueue<>(Collections.reverseOrder());
+        // int index = 0;
+        // for(int i = 0; i<N; i++){
+        //     int sum = Arr[i];
+        //      pq.add(sum);
+            
+        //     for(int j = i+1; j<N; j++){
+        //       sum = sum+Arr[j];
+        //       pq.add(sum);
+        //     }
+        //     sum = 0;
+        // }
+        
+        // for(int i = 0; i<K-1; i++){
+        //   pq.poll();
+        // }
+        // return pq.peek();        
      
     }
 }
