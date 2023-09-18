@@ -35,14 +35,13 @@ class Solution
         int count = 0;
         
         while(n!=0){
-            int rem = n%2;
-            if(rem==0){
-                count++;
-                n = n>>1;
-            }
-            else{
-                return count+1;
-            }
+         
+         if((n&1)==1){
+             return count+1;
+         }
+        count++;
+        n = n>>1;
+           
         }
         return 0;
     }
