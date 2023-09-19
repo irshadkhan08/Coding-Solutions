@@ -32,16 +32,39 @@ class GFG{
 
 class Solution 
 { 
-    static int Search(int array[], int target)
+    static int Search(int arr[], int key)
 	{
 	    // code here
 	    
-	    for(int i = 0; i<array.length; i++){
-	        if(array[i]==target){
-	            return i;
-	        }
-	    }
-	    return -1;
+	   int l = 0;
+	   int r = arr.length-1;
+	   
+	   while(l<=r){
+	       
+	       int mid = (l+r)/2;
+	       
+	       if(arr[mid]==key){
+	           return mid;
+	       }
+	       else if(arr[l]<arr[mid]){
+	           
+	           if(arr[l]<=key && arr[mid]>=key){
+	               r = mid-1;
+	           }
+	           else{
+	               l = mid+1;
+	           }
+	       }
+	       else{
+	           if(arr[r]>=key && arr[mid]<=key){
+	               l = mid+1;
+	           }
+	           else{
+	               r = mid-1;
+	           }
+	       }
+	   }
+	   return -1;
 	    
 	}
 } 
