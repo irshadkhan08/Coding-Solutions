@@ -48,7 +48,7 @@ class Solution
 	       }
 	       else if(arr[l]<arr[mid]){
 	           
-	           if(arr[l]<=key && arr[mid]>=key){
+	           if(arr[l]<=key && arr[mid]>key){
 	               r = mid-1;
 	           }
 	           else{
@@ -56,7 +56,7 @@ class Solution
 	           }
 	       }
 	       else{
-	           if(arr[r]>=key && arr[mid]<=key){
+	           if(arr[r]>=key && arr[mid]<key){
 	               l = mid+1;
 	           }
 	           else{
