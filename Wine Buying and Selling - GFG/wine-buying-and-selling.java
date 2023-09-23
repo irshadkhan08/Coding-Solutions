@@ -33,24 +33,42 @@ class Solution {
     long wineSelling(int Arr[],int N){
         // code here
         
-        long ans[] = new long[N];
         
-        // ans[0] = Arr[0];
+        
+        // Time complextiy : o(n)
+        //Space complexity : o(1)
+        
+        long ans = 0;
         int sum = 0;
-        int k = 0;
+        
         for(int i = 0; i<N; i++){
             sum = sum+Arr[i];
-            ans[k++] = sum;
+            ans = ans+Math.abs(sum);
         }
         
-        long res = 0;
+        return ans;
         
-        for(int i = 0; i<ans.length; i++){
-            res = res+Math.abs(ans[i]);
-        }
         
-        return res;
+         // Time complextiy : o(n)
+        //Space complexity : o(n)
+        
+        // long ans[] = new long[N];
+        // int sum = 0;
+        // int k = 0;
+        // for(int i = 0; i<N; i++){
+        //     sum = sum+Arr[i];
+        //     ans[k++] = sum;
+        // }
+        
+        // long res = 0;
+        
+        // for(int i = 0; i<ans.length; i++){
+        //     res = res+Math.abs(ans[i]);
+        // }
+        
+        // return res;
     }
+    
 }
 
 //{ Driver Code Starts.
