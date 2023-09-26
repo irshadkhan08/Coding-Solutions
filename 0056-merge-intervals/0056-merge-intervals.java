@@ -10,7 +10,6 @@ class Solution {
             }
             else{
                 int pre[] = list.get(list.size()-1);
-                  // int pre[] = list.get(list.size()-1);
                 if(interval[0]<=pre[1]){
                     pre[1] = Math.max(interval[1],pre[1]);
                 }
