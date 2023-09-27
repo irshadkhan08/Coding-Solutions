@@ -64,10 +64,10 @@ class GFG
         long sum = 0;
         long student = 1;
         for(int i = 0; i<arr.length; i++){
-            if(sum+arr[i]<=pages){
+        
               sum = sum+arr[i];
-            }
-            else{
+      
+            if(sum>pages){
                 student++;
                 if(arr[i]>pages||student>M){
                 return false;
