@@ -38,50 +38,17 @@ public class Main {
 class Solution {
     boolean hasArrayTwoCandidates(int arr[], int n, int x) {
         // code here
-        
-        // HashMap<Integer,Integer>map = new HashMap<>();
-        // boolean istrue = false;
-        // for(int i = 0; i<n; i++){
-        //     int element = x-arr[i];
-            
-        //     if(map.containsKey(element)){
-        //         istrue = true;
-             
-        //     }
-        //     if(map.get(x)==null){
-        //         map.put(arr[i],0);
-        //     }
-        //     map.put(arr[i],map.get(arr[i]+1));
-        // }
-        // return istrue;
-        
-        
-        
         HashMap<Integer,Integer>map = new HashMap<>();
         for(int i = 0; i<n; i++){
-            int val = x-arr[i];
-            if(map.containsKey(val)){
+            
+            int rem = x-arr[i];
+            if(map.containsKey(rem)){
                 return true;
             }
-            map.put(arr[i],0);
+            else{
+                map.put(arr[i],1);
+            }
         }
         return false;
-        
-        // Arrays.sort(arr);
-        // int i = 0;
-        // int j = n-1;
-        // boolean istrue =false;
-        // while(i<j){
-        //     if(arr[i]+arr[j]==x){
-        //         return true;
-        //     }
-        //     else if(arr[i]+arr[j]<x){
-        //         i++;
-        //     }
-        //     else if(arr[i]+arr[j]>x){
-        //         j--;
-        //     }
-        // }
-        // return false;
     }
 }
