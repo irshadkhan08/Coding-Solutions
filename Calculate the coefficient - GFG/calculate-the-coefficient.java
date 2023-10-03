@@ -40,12 +40,12 @@ class Solution
     {
         // Code here
         long ans = 1;
-        k = k%n;
-        long p=1,M=1000000007;
-        for(int i = n; i>n-k; i--){
-            ans = ans*i%M;
+        long M=1000000007;
+        while(k!=0){
+            ans = ans*n%M;
+            n--;
+            k--;
         }
-        // long rem = n-k;
-        return (int)(ans);
+        return (int)ans;
     }
 }
