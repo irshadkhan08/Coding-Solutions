@@ -63,26 +63,39 @@ class Solution
 	static int findLongestConseqSubseq(int arr[], int N)
 	{
 	    
-	   Arrays.sort(arr);
-	   int ans = 1;
-	   int count = 1;
-	   for(int i = 0; i<N-1; i++){
-	      
-	      if(arr[i]!=arr[i+1]){
-	          if(arr[i]+1==arr[i+1]){
-	              count++;
-	          }
-	          else{
-	            ans = Math.max(ans,count);
-	            count = 1;
-	          }
-	      }
-	      
-	   }
-	   
-	   if(ans<count){
-	       ans = count;
-	   }
-	   return ans;
+	    HashMap<Integer,Boolean>map = new HashMap<>();
+	    
+	    for(int i = 0; i<N; i++){
+	            map.put(arr[i],true);
+	    }
+	    
+	    for(int i = 0; i<N; i++){
+	        int val = arr[i]-1;
+	        if(map.containsKey(val)){
+	            map.put(arr[i],false);
+	        }
+	    }
+	    
+	    
+	    int count=1;
+	    int ans=1;
+	    for(int i = 0; i<N; i++){
+	        int cur = arr[i];
+	        if(map.get(arr[i])==true){
+	            while(map.containsKey(arr[i]+count)){
+	                count++;
+	            }
+	            
+	            if(count>ans){
+	                ans=count;
+	            }
+	            count=1;
+	        }
+	    }
+        
+       return ans;
+       
+       
+        
 	}
 }
