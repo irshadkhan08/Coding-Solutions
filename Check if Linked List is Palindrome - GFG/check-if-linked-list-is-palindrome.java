@@ -102,33 +102,32 @@ class Solution
     //Function to check whether the list is palindrome.
     boolean isPalindrome(Node head) 
     {
-        //Your code here
-        
-        int dig = 0;
-        while(head!=null){
-            int rem = head.data;
-            rem = rem%10;
-            dig = dig*10+rem;
-            head= head.next;
-        }
-        
-       
-        
-        
-        
-        int N = dig;
-        int rev = 0;
-        while(N!=0){
-            int rem = N%10;
-            rev = rev*10+rem;
-            N = N/10;
-        }
-        if(rev==dig){
-            return true;
-        }
-        else{
-            return false;
-        }
+
+     Node cur1 = head;
+     
+     Node slow = head;
+     Node fast = head;
+     
+     while(fast!=null && fast.next!=null){
+         slow = slow.next;
+         fast = fast.next.next;
+     }
+     
+     Node prev = null;
+     while(slow!=null){
+        Node temp = slow.next;
+        slow.next = prev;
+        prev = slow;
+        slow= temp;
+     }
+     while(cur1!=null && prev!=null){
+         if(cur1.data!=prev.data){
+             return false;
+         }
+         cur1 = cur1.next;
+         prev = prev.next;
+     }
+     return true;
     }    
 }
 
