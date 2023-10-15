@@ -37,38 +37,29 @@ class Solution
     //Function to check if brackets are balanced or not.
     static boolean ispar(String x)
     {
-      
-      Stack<Character>st = new Stack<>();
-      
       if(x.length()==0||x.length()==1){
           return false;
       }
+      Stack<Character>st = new Stack<>();
+      
       for(int i = 0; i<x.length(); i++){
           char ch = x.charAt(i);
           
-           if (ch == '[' || ch == '(' || ch == '{') {
-        st.push(ch);
-    } else if (!st.isEmpty()) {
-        char top = st.pop();
-        if ((ch == ']' && top != '[') || (ch == ')' && top != '(') || (ch == '}' && top != '{')) {
-            return false; // Mismatched closing bracket
-        }
-    } else {
-        return false; // Unmatched closing bracket
-    }
-        //   if (ch == '[' || ch == '(' || ch == '{') {
-        //     st.push(ch);
-        //   } 
-        //   else if(st.peek()=='[' && ch==']'){
-        //       st.pop();
-        //   }
-        //   else if(st.peek()=='(' && ch==')'){
-        //       st.pop();
-        //   }
-        //   else if(st.peek()=='{' && ch=='}'){
-        //       st.pop();
-        //   }
-      }
+        if (ch == '[' || ch == '(' || ch == '{') {
+          st.push(ch);
+         }else {
+             if(st.isEmpty()){
+                 return false;
+             }
+                char top=st.peek();
+               if((ch==']' && top=='[') ||(ch=='}' && top=='{')||(ch==')'&& top=='(')){
+                st.pop();
+               }else{
+                   return false;
+               }
+         }
+    } 
+         
       
       if(!st.isEmpty()){
           return false;
