@@ -59,7 +59,7 @@ class GfG {
         Queue<Integer>ans= new ArrayDeque<>();
         Stack<Integer>stack = new Stack<>();
         
-        
+        int n = q.size();
         for(int i = 0; i<k; i++){
             stack.push(q.poll());
         }
@@ -67,7 +67,11 @@ class GfG {
            ans.offer(stack.pop());
         }
         
-        while(!q.isEmpty()){
+        // while(!q.isEmpty()){
+        //     ans.offer(q.poll());
+        // }
+        
+        for(int i = 0; i<n-k; i++){
             ans.offer(q.poll());
         }
         return ans;
