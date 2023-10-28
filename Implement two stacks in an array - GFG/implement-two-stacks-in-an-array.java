@@ -45,43 +45,48 @@ class TwoStack
 
 
 
+
+
 class twoStacks
 {
-    Stack<Integer>s1 = new Stack<Integer>();
-    Stack<Integer>s2 = new Stack<Integer>();
+    int arr[];
+    int size;
+    int top1, top2;
+    twoStacks()
+    {
+        size = 99; 
+        arr = new int[99]; 
+        top1 = -1; 
+        top2 = size;
+    }
     //Function to push an integer into the stack1.
     void push1(int x)
-    {
-     s1.push(x);
+    {   
+        arr[++top1] = x;  
     }
     //Function to push an integer into the stack2.
     void push2(int x)
     {
-       s2.push(x);
+       arr[--top2] = x;
     }
     //Function to remove an element from top of the stack1.
     int pop1()
     {
-        if(s1.isEmpty()){
+        if(top1==-1){
             return -1;
         }
-        else{
-            int k = s1.peek();
-            s1.pop();
-            return k;
-        }
+        int t1 = arr[top1--];
+        return t1;
+      
     }
     //Function to remove an element from top of the stack2.
     int pop2()
     {
-        if(s2.isEmpty()){
+        if(top2==99){
             return -1;
         }
-        else{
-            int k = s2.peek();
-            s2.pop();
-            return k;
-        }
+        int t2 = arr[top2++];
+        return t2;
     }
 }
 
