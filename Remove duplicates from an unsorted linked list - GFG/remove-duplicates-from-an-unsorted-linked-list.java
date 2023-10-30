@@ -98,20 +98,23 @@ class Solution
     {
          // Your code here
          if(head == null || head.next == null) return head;
-  
-         HashSet<Integer> set = new HashSet<>();
-         Node temp = head;
-         Node prev = null;
-         while(temp != null) {
-             if(set.contains(temp.data)) {
+         
+        HashSet<Integer>set = new HashSet<>();
+        
+        Node temp = head;
+        Node prev = null;
+        while(temp!=null){
+            
+            if(set.contains(temp.data)){
                 temp = temp.next;
                 prev.next = temp;
-             } else {
-                 set.add(temp.data);
-                 prev = temp;
-                 temp = temp.next;
-             }
-         }
-         return head;
+            }
+            else{
+                set.add(temp.data);
+                prev = temp;
+                temp = temp.next;
+            }
+        }
+        return head;
     }
 }
