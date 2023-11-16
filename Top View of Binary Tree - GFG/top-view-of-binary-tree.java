@@ -131,48 +131,45 @@ class Solution
     static ArrayList<Integer> topView(Node root)
     {
         // add your code
+     Queue<Pair> queue=new LinkedList<>();
+         Map<Integer,Integer> map=new TreeMap<>();
+        ArrayList<Integer> list=new ArrayList<>();
         
-           ArrayList<Integer>ans = new ArrayList<Integer>();
-         if(root==null) return ans;
-         
-         Queue<Pair>q = new LinkedList<>();
-         q.add(new Pair(0,root));
-         
-         Map<Integer,Integer>map = new TreeMap<>();
-         
-         while(!q.isEmpty()){
-             Pair cur = q.poll();
-             Node currentNode=cur.root;
-            int key = cur.hd;
+        if(root==null)return list;
+        queue.add(new Pair(0,root));
+        
+        while(!queue.isEmpty()){
+            Pair curr=queue.poll();
+            Node currentNode=curr.root;
+            int currHD=curr.hd;
             
-            if(!map.containsKey(cur.hd)){
-                map.put(key,currentNode.data);
+            if(!map.containsKey(curr.hd)){
+                map.put(currHD,currentNode.data);
             }
-            // map.get(cur.hd).add(cur.root.data);
-            if(cur.root.left!=null){
-               // q.add(key-1,cur.root.left);
-                q.add(new Pair(cur.hd-1,cur.root.left));
+            
+            if(curr.root.left!=null){
+                queue.add(new Pair(curr.hd-1,curr.root.left));
             }
-             if(cur.root.right!=null){
-                q.add(new Pair(cur.hd+1,cur.root.right));
-                
+            
+            if(curr.root.right!=null){
+                queue.add(new Pair(curr.hd+1,curr.root.right));
             }
-        
-         }
-         for(int res : map.values()){
-                ans.add(res);
         }
-        return ans;
+        
+        for(int i : map.values()){
+            list.add(i);
+        }
+        return list;
+        
     }
+    
     static class Pair{
         int hd;
         Node root;
         
-        Pair(int hd, Node root){
-            this.hd = hd;
-            this.root = root;
+        Pair(int hd,Node root){
+            this.hd=hd;
+            this.root=root;
         }
-    
-        
     }
 }
