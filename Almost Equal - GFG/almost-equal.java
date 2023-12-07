@@ -29,8 +29,8 @@ class Solution
     public int countChars(String s1, String s2)
     {
         // Code here
-        c c1[] = new char[26];
-        char c2[] = new char[26];
+        int c1[] = new int[26];
+        int c2[] = new int[26];
        
        for(int i = 0; i<s1.length(); i++){
            c1[s1.charAt(i)-'a']++;
